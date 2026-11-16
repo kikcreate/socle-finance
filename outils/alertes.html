@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Listes et alertes · Socle</title>
+<meta name="description" content="Suivez des valeurs dans des listes, fixez des seuils haut et bas, notez les cours relevés et voyez les alertes déclenchées.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/alertes.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="alertes">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Listes et alertes</span></nav>
+    <p class="eyebrow">Outil de l'investisseur</p>
+    <h1>Listes et alertes</h1>
+    <p class="lead">Rangez les valeurs qui vous intéressent dans des listes, fixez vos seuils, notez pourquoi, et voyez d'un coup d'œil celles qui les ont franchis.</p>
+    <p class="mt-s"><span class="tag sub">Outil de l'investisseur</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<p class="demo-note">Socle n'est relié à aucun flux de cotation : saisissez le cours quand vous le consultez, l'outil garde l'historique et vérifie vos seuils. Données gardées dans ce navigateur.</p><div class="card mt-s" style="padding:18px"><div class="toolbar"><div class="tabs" role="tablist" id="lists" aria-label="Mes listes"></div><span class="sp"></span><button class="btn ghost small" type="button" id="newList">Nouvelle liste</button><button class="btn ghost small" type="button" id="delList">Supprimer la liste</button><button class="btn ghost small" type="button" id="demo">Charger l'exemple</button><button class="btn ghost small" type="button" id="csv">Exporter</button></div><p class="res-lbl mt-s" id="nOn"></p><ul id="hits" style="list-style:disc;padding-left:1.2em;margin-top:6px"></ul><div class="tbl mt-s"><table class="edit-tbl" style="min-width:860px"><thead><tr><th>Valeur</th><th>Tendance</th><th class="r">Nouveau cours</th><th class="r">Seuil haut</th><th class="r">Seuil bas</th><th>État</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></div><form class="card mt-m form" id="f" style="padding:18px"><h2 style="font-size:1.1rem">Ajouter une valeur</h2><div class="row"><label>Nom<input name="nom" required placeholder="Ex. ETF Monde"></label><label>Cours actuel (€)<input name="cours" inputmode="decimal" placeholder="Ex. 44,60"></label></div><div class="row"><label>Seuil haut (€)<input name="haut" inputmode="decimal" placeholder="facultatif"></label><label>Seuil bas (€)<input name="bas" inputmode="decimal" placeholder="facultatif"></label></div><label>Pourquoi je la suis<input name="note" maxlength="120" placeholder="Ex. Renforcer sous 40 €"></label><div><button class="btn" type="submit">Ajouter</button></div></form><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Une alerte est déclenchée quand le dernier cours saisi est au-dessus du seuil haut ou au-dessous du seuil bas.</li><li>Écrire pourquoi vous suivez une valeur, avant que le cours bouge, aide à décider calmement quand le seuil est franchi.</li><li>Pour recevoir de vraies alertes automatiques, votre courtier propose souvent des ordres à seuil de déclenchement ou des notifications.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Distance au seuil = seuil / cours − 1</p><p>Une distance de +10 % signifie que le cours doit monter de 10 % pour atteindre le seuil haut.</p></div></div><div class="card related" data-guides="actions,ordres,etf" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="analyse-entreprise.html">Analyse d&#x27;entreprise</a><a href="portefeuille.html">Suivi de portefeuille</a><a href="grands-fonds.html">Positions des grands fonds</a><a href="frais-courtage.html">Frais de courtage</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Investissement programmé (DCA) · Socle</title>
+<meta name="description" content="Comparez investir une somme d&#x27;un coup ou l&#x27;étaler sur plusieurs mois, selon différents scénarios de marché.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/dca.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="dca">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Investissement programmé</span></nav>
+    <p class="eyebrow">Simulateur · Investir en bourse</p>
+    <h1>Investissement programmé</h1>
+    <p class="lead">Faut-il tout investir d'un coup ou étaler ses achats ? Testez les deux sur plusieurs scénarios de marché et voyez l'effet sur votre prix moyen d'achat.</p>
+    <p class="mt-s"><span class="tag free">Gratuit</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card sim"><div class="sim-body"><form id="f" novalidate><div class="field"><label for="somme">Somme à investir</label><input type="number" id="somme" name="somme" value="12000" min="0" step="500" inputmode="decimal"></div><div class="field"><label for="etale">Étaler sur<output for="etale" data-suf=" mois"></output></label><input type="range" id="etale" name="etale" value="12" min="1" max="36" step="1" inputmode="decimal"></div><div class="field"><label for="ans">Durée observée<output for="ans" data-fmt="ans"></output></label><input type="range" id="ans" name="ans" value="5" min="1" max="15" step="1" inputmode="decimal"></div><div class="field"><label for="frais">Frais par achat</label><input type="number" id="frais" name="frais" value="0.1" min="0" max="2" step="0.05" inputmode="decimal"><span class="hint">En % du montant de chaque ordre.</span></div><fieldset class="fieldset"><legend>Scénario de marché</legend><div class="seg"><label><input type="radio" name="sc" value="hausse"><span>Hausse régulière</span></label><label><input type="radio" name="sc" value="reprise" checked><span>Baisse puis reprise</span></label><label><input type="radio" name="sc" value="krach"><span>Krach soudain</span></label><label><input type="radio" name="sc" value="longue"><span>Baisse longue</span></label><label><input type="radio" name="sc" value="plat"><span>Marché en dents de scie</span></label><label><input type="radio" name="sc" value="alea"><span>Tirage aléatoire</span></label></div></fieldset><button type="button" class="btn ghost small" id="tirage" hidden>Nouveau tirage</button><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form><div class="sim-out" aria-live="polite"><p class="res-lbl">Dans ce scénario, mieux valait investir</p><p class="res-big t" id="rBest">—</p><div class="res-row" id="rRow"></div><div class="chart" id="chart"></div><ul class="mt-m" id="insights" style="list-style:disc;padding-left:1.2em;color:var(--muted)"></ul></div></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Les scénarios sont des trajectoires stylisées, pas des prévisions. Le tirage aléatoire suppose 7 % de rendement moyen et 15 % de volatilité par an.</li><li>Pendant l'étalement, la somme pas encore investie reste en liquidités, sans rémunération.</li><li>Les études sur longue période montrent que l'investissement d'un coup gagne environ deux fois sur trois, parce que les marchés montent plus souvent qu'ils ne baissent. L'étalement limite surtout le regret d'avoir tout acheté juste avant une baisse.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Parts achetées chaque mois = (S / k) × (1 − frais) / cours<br>Prix moyen = montant investi / parts</p><p>En investissant un montant fixe, vous achetez plus de parts quand le cours est bas : votre prix moyen d'achat est la moyenne harmonique des cours, toujours inférieure ou égale à leur moyenne simple.</p></div></div><div class="card related" data-guides="dca,etf,cycles,actions" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="krachs.html">Historique des krachs</a><a href="epargne.html">Épargne et intérêts composés</a><a href="portefeuille-virtuel.html">Portefeuille virtuel</a><a href="frais.html">Impact des frais</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

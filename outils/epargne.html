@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Simulateur d&#x27;épargne et intérêts composés · Socle</title>
+<meta name="description" content="Calculez ce que deviennent un capital de départ et des versements mensuels avec les intérêts composés, en euros courants et en euros d&#x27;aujourd&#x27;hui.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/epargne.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="epargne">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Épargne et intérêts composés</span></nav>
+    <p class="eyebrow">Simulateur · Bien démarrer</p>
+    <h1>Épargne et intérêts composés</h1>
+    <p class="lead">Un capital, des versements réguliers et du temps : l'effet boule de neige, année après année, avec la part qui vient de vous et celle qui vient des intérêts.</p>
+    <p class="mt-s"><span class="tag free">Gratuit</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card sim"><div class="sim-body"><form id="f" novalidate><div class="field"><label for="depart">Versement de départ</label><input type="number" id="depart" name="depart" value="1000" min="0" step="100" inputmode="decimal"></div><div class="field"><label for="mensuel">Versement mensuel</label><input type="number" id="mensuel" name="mensuel" value="150" min="0" step="10" inputmode="decimal"></div><div class="field"><label for="taux">Rendement annuel supposé<output for="taux" data-fmt="pct"></output></label><input type="range" id="taux" name="taux" value="5" min="-5" max="15" step="0.1" inputmode="decimal"></div><div class="field"><label for="ans">Durée<output for="ans" data-fmt="ans"></output></label><input type="range" id="ans" name="ans" value="20" min="1" max="50" step="1" inputmode="decimal"></div><div class="field"><label for="index">Hausse annuelle des versements<output for="index" data-fmt="pct"></output></label><input type="range" id="index" name="index" value="0" min="0" max="10" step="0.5" inputmode="decimal"><span class="hint">Par exemple pour suivre vos augmentations de salaire.</span></div><div class="field"><label for="inflation">Inflation supposée<output for="inflation" data-fmt="pct"></output></label><input type="range" id="inflation" name="inflation" value="2" min="0" max="8" step="0.1" inputmode="decimal"></div><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form><div class="sim-out" aria-live="polite"><p class="res-lbl">Capital estimé au bout de la période</p><p class="res-big" id="rFin">—</p><div class="res-row" id="rRow"></div><div class="chart" id="chart"></div><ul class="mt-m" id="insights" style="list-style:disc;padding-left:1.2em;color:var(--muted)"></ul></div></div></div><details class="card mt-m" style="padding:18px"><summary style="cursor:pointer;font-weight:700">Voir le détail année par année</summary><div id="tab" class="mt-s"></div></details><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Rendement constant chaque année, capitalisé chaque mois (taux mensuel équivalent).</li><li>Versements en fin de mois, avant impôts et frais : comparez les enveloppes et l'impact des frais avec les simulateurs dédiés.</li><li>Les marchés varient chaque année et peuvent baisser : 5 % par an est une moyenne de long terme pour un portefeuille diversifié, pas une promesse.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Capital = C₀ × (1 + r)ⁿ + V × ((1 + r)ⁿ − 1) / r</p><p>C₀ est le versement de départ, V le versement mensuel, r le taux mensuel équivalent, soit (1 + taux annuel)^(1/12) − 1, et n le nombre de mois. La règle de 72 donne le temps de doublement : 72 divisé par le taux en pourcentage.</p></div></div><div class="card related" data-guides="interets-composes,etf,assurance-vie,pea" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="objectif.html">Objectif financier</a><a href="frais.html">Impact des frais</a><a href="dca.html">Investissement programmé</a><a href="inflation.html">Inflation et pouvoir d&#x27;achat</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

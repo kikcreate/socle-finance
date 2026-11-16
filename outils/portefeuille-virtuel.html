@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portefeuille virtuel · Socle</title>
+<meta name="description" content="Investissez de l&#x27;argent fictif sur un marché simulé : actions, ETF, obligations et or fictifs, dividendes, actualités expliquées et badges.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/portefeuille-virtuel.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="portefeuille-virtuel">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Portefeuille virtuel</span></nav>
+    <p class="eyebrow">S'entraîner sans risque</p>
+    <h1>Portefeuille virtuel</h1>
+    <p class="lead">Investissez de l'argent fictif sur un marché simulé, faites avancer le temps et voyez comment réagit votre portefeuille aux actualités, aux dividendes et aux frais. Tout est sauvegardé dans votre navigateur.</p>
+    <p class="mt-s"><span class="tag free">Gratuit</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<form class="card" id="start" style="padding:22px"><h2 style="font-size:1.15rem">Démarrer ou recommencer</h2><div class="grid3 mt-s">
+<div class="field"><label for="capInit">Capital fictif de départ</label><select id="capInit"><option value="1000">1 000 €</option><option value="10000" selected>10 000 €</option><option value="50000">50 000 €</option><option value="100000">100 000 €</option></select></div>
+<div class="field"><label for="feesInit">Frais de courtage par ordre</label><select id="feesInit"><option value="0">Aucun</option><option value="0.1" selected>0,1 %</option><option value="0.5">0,5 %</option></select></div>
+<fieldset class="fieldset"><legend>Répartition de départ</legend><div class="seg"><label><input type="radio" name="profil" value="" checked><span>Je choisis</span></label><label><input type="radio" name="profil" value="prudent"><span>Prudent</span></label><label><input type="radio" name="profil" value="equilibre"><span>Équilibré</span></label><label><input type="radio" name="profil" value="dynamique"><span>Dynamique</span></label></div></fieldset>
+</div><button class="btn" type="submit">Lancer la simulation</button> <span class="hint">Les entreprises, cours et actualités sont fictifs.</span></form>
+<div class="card mt-m" style="padding:22px">
+ <div class="vp-top"><div><p class="res-lbl">Valeur du portefeuille · <span id="simDate"></span></p><p class="res-big" id="total">—</p><p id="perf" class="num"></p></div>
+ <div><p class="res-lbl">Faire avancer le temps</p><div class="vp-speed"><button type="button" data-speed="0" aria-pressed="true">Pause</button><button type="button" data-speed="1">1 jour / 1,5 s</button><button type="button" data-speed="5">1 semaine / 1,5 s</button><button type="button" data-jump="21">+1 mois</button><button type="button" data-jump="252">+1 an</button></div></div></div>
+ <div class="res-row" id="kRow"></div>
+</div>
+<div class="tabs mt-m" role="tablist" id="vpTabs" aria-label="Portefeuille virtuel">
+<button role="tab" aria-selected="true" aria-controls="p-pf" data-tab="pf">Portefeuille</button><button role="tab" aria-selected="false" aria-controls="p-mk" data-tab="mk">Marché</button><button role="tab" aria-selected="false" aria-controls="p-nw" data-tab="nw">Actualités <span class="tag" id="newsCount" hidden></span></button><button role="tab" aria-selected="false" aria-controls="p-hx" data-tab="hx">Historique</button><button role="tab" aria-selected="false" aria-controls="p-bd" data-tab="bd">Badges <span class="tag" id="nBadges"></span></button></div>
+<div class="card mt-s" style="padding:22px">
+ <div id="p-pf" role="tabpanel"><div class="toolbar"><span class="res-lbl">Période</span><div class="vp-speed"><button type="button" data-range="21" aria-pressed="false">1 mois</button><button type="button" data-range="126" aria-pressed="false">6 mois</button><button type="button" data-range="252" aria-pressed="false">1 an</button><button type="button" data-range="9999" aria-pressed="true">Tout</button></div></div><div class="chart" id="pfChart"></div><div class="grid2 mt-m"><div><h3>Répartition</h3><div class="mt-s" id="donut"></div></div><div><h3>Vos lignes</h3><div class="mt-s" id="positions"></div></div></div></div>
+ <div id="p-mk" role="tabpanel" hidden><div class="toolbar"><label for="mkFilter" class="res-lbl">Afficher</label><select id="mkFilter" style="padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--bg)"><option value="all">Tout</option><option value="action">Actions</option><option value="etf">ETF</option><option value="bond">Obligations</option><option value="gold">Or</option></select></div><div class="mk-list" id="market"></div></div>
+ <div id="p-nw" role="tabpanel" hidden><div id="news"></div></div>
+ <div id="p-hx" role="tabpanel" hidden><div id="history"></div></div>
+ <div id="p-bd" role="tabpanel" hidden><p class="muted">Les badges Premier pas, Diversification, Rentier, Sang-froid et Investisseur patient comptent aussi dans <a href="../apprendre/progression.html">votre progression</a>.</p><div class="badges mt-m" id="badges"></div></div>
+</div>
+<div id="sheetRoot"></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Les cours évoluent au hasard autour d'une tendance propre à chaque actif, avec une volatilité plus forte pour les jeunes entreprises que pour les ETF et les obligations.</li><li>Dividendes versés chaque trimestre (63 jours de bourse), coupons chaque mois (21 jours).</li><li>Une actualité tombe en moyenne toutes les 18 séances et fait bouger un actif ou tout le marché ; chacune est expliquée.</li><li>Aucun impôt n'est simulé : dans la réalité, ils dépendraient de l'enveloppe.</li></ul></div><div class="card"><h2>La formule</h2><p>Le cours de chaque jour = cours de la veille × (1 + tendance + hasard × volatilité). Le hasard suit une loi en cloche : la plupart des jours bougent peu, quelques-uns beaucoup. C'est ce qui rend le temps long si précieux : sur une journée, le hasard domine ; sur des années, la tendance finit par l'emporter.</p></div></div><div class="card related" data-guides="actions,etf,obligations,dividendes" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="krachs.html">Historique des krachs</a><a href="dca.html">Investissement programmé</a><a href="analyse-entreprise.html">Analyse d&#x27;entreprise</a><a href="portefeuille.html">Suivi de portefeuille</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

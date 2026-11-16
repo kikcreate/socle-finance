@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Socle · Comprendre, tester, puis investir</title>
+<meta name="description" content="Socle explique la bourse et l'épargne simplement : guide de démarrage gratuit, leçons avec quiz, guides complets, simulateurs et portefeuille virtuel.">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js"></script>
+<style>
+.welcome{display:none;margin-top:26px;padding:16px 18px;align-items:center;gap:16px;flex-wrap:wrap}
+.welcome.on{display:flex}
+.welcome .progress{flex:1;min-width:160px}
+.lesson-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.lesson-strip a{padding:14px 16px;text-decoration:none;display:flex;flex-direction:column;gap:4px}
+.lesson-strip a:hover{border-color:var(--s1)}
+.lesson-strip small{font-family:var(--mono);font-size:.72rem;color:var(--s1);font-weight:600}
+.lesson-strip b{font-size:.95rem;line-height:1.3}
+@media (max-width:900px){.lesson-strip{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.lesson-strip{grid-template-columns:1fr}}
+.vp{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;padding:26px;margin-top:22px;background:var(--s3-soft);border-color:transparent}
+.vp > div{min-width:0}
+@media (max-width:820px){.vp{grid-template-columns:1fr}}
+.tool a.lnk,.door a.lnk{font-weight:700;color:var(--c,var(--accent))}
+a.tool{text-decoration:none}
+a.tool:hover{border-color:var(--s3)}
+</style>
+</head>
+<body>
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">L'argent expliqué, sans vous vendre de rêve</p>
+          <h1>Comprendre, tester, <em>puis</em> investir. Dans cet ordre.</h1>
+          <p class="lead">Un guide de démarrage gratuit, des leçons de trois minutes avec quiz, vingt guides complets, des simulateurs qui montrent les vrais chiffres et un portefeuille virtuel pour s'entraîner sans risque. Pas de jargon inutile, pas de promesse de rendement.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#commencer">Trouver mon point de départ</a>
+            <a class="play" href="#plan"><span>▸</span>Le site en 4 espaces</a>
+          </div>
+          <div class="welcome card" id="welcome">
+            <div><b id="wLvl">Niveau</b><p class="small muted" id="wTxt"></p></div>
+            <div class="progress" aria-hidden="true"><i id="wBar" style="width:0"></i></div>
+            <a class="btn ghost" href="apprendre/progression.html">Ma progression</a>
+          </div>
+        </div>
+        <div class="stack" aria-label="Les quatre espaces de Socle, empilés comme des fondations">
+          <a class="blk b4" href="formules/index.html" style="text-decoration:none"><span class="n">04</span><b>Formules</b></a>
+          <a class="blk b3" href="outils/index.html" style="text-decoration:none"><span class="n">03</span><b>Outils</b></a>
+          <a class="blk b2" href="guides/index.html" style="text-decoration:none"><span class="n">02</span><b>Guides</b><small>20 sujets, sources citées</small></a>
+          <a class="blk b1" href="apprendre/index.html" style="text-decoration:none"><span class="n">01</span><b>Apprendre gratuitement</b><small>Guide de démarrage, 8 leçons et des simulateurs, sans inscription</small></a>
+          <div class="note card"><strong>On construit par le bas.</strong>Le budget et l'épargne de précaution d'abord, les placements ensuite.</div>
+        </div>
+      </div>
+      <nav class="pills" aria-label="Accès rapide aux espaces">
+        <a class="pill" href="apprendre/index.html"><span class="d" style="background:var(--s1)">1</span>Apprendre gratuitement</a>
+        <a class="pill" href="guides/index.html"><span class="d" style="background:var(--s2)">2</span>Guides</a>
+        <a class="pill" href="outils/index.html"><span class="d" style="background:var(--s3)">3</span>Outils de l'investisseur</a>
+        <a class="pill" href="formules/index.html"><span class="d" style="background:var(--s4)">4</span>Formules et compte</a>
+      </nav>
+    </div>
+  </div>
+
+  <section id="commencer" style="padding-top:28px">
+    <div class="wrap">
+      <div class="plain-head"><h2>Par où commencer ?</h2><p class="lead">Choisissez la phrase qui vous ressemble le plus.</p></div>
+      <div class="grid3">
+        <article class="door card">
+          <div class="ico" style="background:var(--s1-soft);color:var(--s1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21V9M12 9c0-3 2-5 6-5 0 4-2 6-6 5ZM12 13c0-3-2-5-6-5 0 4 2 6 6 5Z"/></svg></div>
+          <p class="who">« Je n'y connais rien »</p>
+          <p>Commencez par une leçon express de trois minutes, puis le premier chapitre du guide de démarrage et le simulateur de budget. Vingt minutes suffisent pour savoir combien vous pouvez mettre de côté.</p>
+          <div class="foot"><a class="btn" href="apprendre/lecons.html">Faire la première leçon</a><small>Sans inscription, sans carte bancaire</small></div>
+        </article>
+        <article class="door card">
+          <div class="ico" style="background:var(--s2-soft);color:var(--s2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5v.01"/></svg></div>
+          <p class="who">« J'ai une question précise »</p>
+          <p>PEA ou assurance-vie, ETF ou actions, comment déclarer un compte à l'étranger : chaque guide répond à une seule question, en profondeur, avec ses sources.</p>
+          <div class="foot"><a class="btn ghost" href="guides/index.html">Choisir un guide</a><small>20 guides, du débutant au confirmé</small></div>
+        </article>
+        <article class="door card">
+          <div class="ico" style="background:var(--s3-soft);color:var(--s3)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg></div>
+          <p class="who">« J'investis déjà »</p>
+          <p>Regroupez vos comptes, regardez la répartition réelle de votre portefeuille, comparez les frais et analysez une entreprise avant d'acheter.</p>
+          <div class="foot"><a class="btn ghost" href="outils/index.html">Voir les outils</a><small>Essai gratuit de 14 jours</small></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="search-band">
+    <div class="wrap sb-grid">
+      <div><h2>Vous savez déjà ce que vous cherchez ?</h2><p class="small" style="color:var(--band-muted);margin-top:8px">Cherchez un guide, un simulateur, une leçon ou un mot du glossaire.</p></div>
+      <div>
+        <div class="sbox">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" type="search" placeholder="Ex. : ouvrir un PEA, intérêts composés…" autocomplete="off" aria-label="Rechercher sur le site">
+          <div class="sresults card" id="sres" hidden></div>
+        </div>
+        <div class="chips"><span class="lbl">Souvent cherché :</span>
+          <button class="chip" type="button">PEA</button>
+          <button class="chip" type="button">Budget</button>
+          <button class="chip" type="button">ETF</button>
+          <button class="chip" type="button">Assurance-vie</button>
+          <button class="chip" type="button">Déclarer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="plan">
+    <div class="wrap">
+      <div class="plain-head"><p class="eyebrow">Le plan du site</p><h2>Quatre espaces, rangés du plus simple au plus pointu</h2></div>
+      <div class="grid4">
+        <article class="space card" style="--c:var(--s1)">
+          <div class="top"><span class="n">1</span><span class="tag free">Gratuit</span></div>
+          <h3>Apprendre gratuitement</h3>
+          <ul><li><a href="apprendre/index.html">Guide de démarrage</a></li><li><a href="apprendre/lecons.html">8 leçons express</a></li><li><a href="apprendre/progression.html">Progression et badges</a></li><li><a href="glossaire/index.html">Glossaire</a></li></ul>
+          <a class="open" href="apprendre/index.html">Ouvrir l'espace →</a>
+        </article>
+        <article class="space card" style="--c:var(--s2)">
+          <div class="top"><span class="n">2</span><span class="tag">20 guides</span></div>
+          <h3>Guides</h3>
+          <ul><li><a href="guides/etf.html">Les ETF, pas à pas</a></li><li><a href="guides/pea.html">Le PEA de A à Z</a></li><li><a href="guides/preparer-sa-retraite.html">Préparer sa retraite</a></li><li><a href="guides/declarer-ses-placements.html">Déclarer ses placements</a></li></ul>
+          <a class="open" href="guides/index.html">Ouvrir l'espace →</a>
+        </article>
+        <article class="space card" style="--c:var(--s3)">
+          <div class="top"><span class="n">3</span><span class="tag trial">Essai 14 jours</span></div>
+          <h3>Outils de l'investisseur</h3>
+          <ul><li><a href="outils/epargne.html">Simulateur d'épargne</a></li><li><a href="outils/portefeuille-virtuel.html">Portefeuille virtuel</a></li><li><a href="outils/portefeuille.html">Suivi de portefeuille</a></li><li><a href="outils/analyse-entreprise.html">Analyse d'entreprise</a></li></ul>
+          <a class="open" href="outils/index.html">Ouvrir l'espace →</a>
+        </article>
+        <article class="space card" style="--c:var(--s4)">
+          <div class="top"><span class="n">4</span><span class="tag">Dès 4,50 €</span></div>
+          <h3>Formules et compte</h3>
+          <ul><li><a href="formules/index.html">Comparer les formules</a></li><li><a href="formules/compte.html">Mon compte</a></li><li><a href="formules/lettre.html">La lettre du mois</a></li><li><a href="formules/compte.html#abonnement">Gérer mon abonnement</a></li></ul>
+          <a class="open" href="formules/index.html">Ouvrir l'espace →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="apprendre" style="background:var(--surface);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head"><div class="sec-num" style="background:var(--s1)">1</div><div><p class="eyebrow">Gratuit, sans inscription</p><h2>Apprendre gratuitement</h2><p class="lead">Un guide de démarrage en huit chapitres, huit leçons express avec quiz, un glossaire et des badges pour suivre vos progrès. Tout est ouvert, sans compte et sans carte.</p></div></div>
+
+      <div class="starter card">
+        <div class="cover" style="background:var(--s1)"><span class="cb">GUIDE DE DÉMARRAGE</span><div class="art"></div><span class="ct">Vos premiers 1 000 € placés</span><span class="cb">8 chapitres · éd. 2026</span></div>
+        <div>
+          <span class="tag free">Offert, en ligne</span>
+          <h3 style="font-size:1.35rem;margin-top:10px">Le guide de démarrage</h3>
+          <ul class="check">
+            <li>Faire son budget et constituer une épargne de précaution</li>
+            <li>Comprendre risque, rendement et durée de placement</li>
+            <li>Choisir entre livret, assurance-vie, PEA et compte-titres</li>
+            <li>Passer son premier ordre sans se tromper</li>
+          </ul>
+          <div class="acts"><a class="btn" href="apprendre/chapitre-1.html" style="background:var(--s1);color:#fff">Lire le chapitre 1</a><a class="txt" href="apprendre/index.html">Voir les 8 chapitres</a></div>
+        </div>
+      </div>
+
+      <div class="plain-head" style="margin:34px 0 0"><h3 style="font-size:1.2rem">Ou une leçon express, trois minutes chrono</h3><p class="muted small" style="margin-top:4px">Chaque leçon se termine par un quiz. Réussissez-le pour gagner de l'expérience et des badges.</p></div>
+      <div class="lesson-strip">
+        <a class="card" href="apprendre/lecons.html#lecon-1"><small>LEÇON 1</small><b>C'est quoi, une action ?</b></a>
+        <a class="card" href="apprendre/lecons.html#lecon-2"><small>LEÇON 2</small><b>Ne pas mettre tous ses œufs dans le même panier</b></a>
+        <a class="card" href="apprendre/lecons.html#lecon-3"><small>LEÇON 3</small><b>Les fonds indiciels (ETF)</b></a>
+        <a class="card" href="apprendre/lecons.html#lecon-6"><small>LEÇON 6</small><b>Les intérêts composés</b></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="guides">
+    <div class="wrap">
+      <div class="sec-head"><div class="sec-num" style="background:var(--s2)">2</div><div><p class="eyebrow" style="color:var(--s2)">Une question, un guide</p><h2>Guides</h2><p class="lead">Chaque guide répond à une seule question, cite ses sources et renvoie vers le simulateur qui permet de faire le calcul pour soi.</p></div></div>
+      <div class="grid4">
+        <a class="guide card" href="guides/etf.html">
+          <div class="cover" style="background:var(--s2)"><span class="cb">BOURSE</span><div class="art"></div><span class="ct">Les ETF, pas à pas</span></div>
+          <span class="meta">Débutant · Bourse</span><h3>Choisir et acheter son premier ETF</h3>
+        </a>
+        <a class="guide card" href="guides/pea.html">
+          <div class="cover" style="background:var(--s1)"><span class="cb">ENVELOPPES</span><div class="art"></div><span class="ct">Le PEA de A à Z</span></div>
+          <span class="meta">Débutant · Enveloppes</span><h3>Ouvrir, remplir et garder un PEA</h3>
+        </a>
+        <a class="guide card" href="guides/preparer-sa-retraite.html">
+          <div class="cover" style="background:var(--s3)"><span class="cb">RETRAITE</span><div class="art"></div><span class="ct">Préparer sa retraite</span></div>
+          <span class="meta">Intermédiaire · Retraite</span><h3>PER, assurance-vie ou les deux ?</h3>
+        </a>
+        <a class="guide card" href="guides/declarer-ses-placements.html">
+          <div class="cover" style="background:var(--s4)"><span class="cb">FISCALITÉ</span><div class="art"></div><span class="ct">Déclarer ses placements</span></div>
+          <span class="meta">Intermédiaire · Fiscalité</span><h3>Formulaires, cases et pièges courants</h3>
+        </a>
+      </div>
+      <div class="topics card">
+        <div class="h"><h3>Les 20 sujets</h3><span class="tag">8,90 € le guide · inclus dans l'abonnement</span></div>
+        <a href="guides/etf.html"><span>Les ETF, pas à pas</span><span>Bourse</span></a>
+        <a href="guides/actions.html"><span>Les actions, comment ça marche</span><span>Bourse</span></a>
+        <a href="guides/lire-un-bilan.html"><span>Lire un bilan d'entreprise</span><span>Bourse</span></a>
+        <a href="guides/dividendes.html"><span>Vivre des dividendes ?</span><span>Bourse</span></a>
+        <a href="guides/obligations.html"><span>Les obligations</span><span>Bourse</span></a>
+        <a href="guides/cycles-de-marche.html"><span>Comprendre les cycles de marché</span><span>Bourse</span></a>
+        <a href="guides/diversifier-investir-regulierement.html"><span>Diversifier et investir régulièrement</span><span>Bourse</span></a>
+        <a href="guides/frais.html"><span>Les frais qui grignotent le rendement</span><span>Bourse</span></a>
+        <a href="guides/erreurs-debutant.html"><span>Les erreurs du débutant</span><span>Bourse</span></a>
+        <a href="guides/pea.html"><span>Le PEA de A à Z</span><span>Enveloppes</span></a>
+        <a href="guides/assurance-vie.html"><span>Assurance-vie : le mode d'emploi</span><span>Enveloppes</span></a>
+        <a href="guides/compte-titres-courtiers.html"><span>Compte-titres et courtiers</span><span>Enveloppes</span></a>
+        <a href="guides/preparer-sa-retraite.html"><span>Préparer sa retraite</span><span>Retraite</span></a>
+        <a href="guides/scpi.html"><span>L'immobilier papier (SCPI)</span><span>Épargne</span></a>
+        <a href="guides/placer-pour-ses-enfants.html"><span>Placer pour ses enfants</span><span>Épargne</span></a>
+        <a href="guides/emprunter-residence.html"><span>Emprunter pour sa résidence</span><span>Épargne</span></a>
+        <a href="guides/cryptomonnaies.html"><span>Les cryptomonnaies, sans fantasme</span><span>Épargne</span></a>
+        <a href="guides/declarer-ses-placements.html"><span>Déclarer ses placements</span><span>Fiscalité</span></a>
+        <a href="guides/transmettre-et-donner.html"><span>Transmettre et donner</span><span>Fiscalité</span></a>
+        <a href="guides/fiscalite-des-placements.html"><span>La fiscalité en un coup d'œil</span><span>Fiscalité</span></a>
+      </div>
+      <div class="gift card">
+        <div><h3>Offrir Socle</h3><p class="muted small">Une carte cadeau valable un an sur tous les guides et outils, envoyée par e-mail à la date de votre choix.</p></div>
+        <a class="btn" href="formules/index.html#offrir">Offrir pour 45 €</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="outils" style="background:var(--surface);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head"><div class="sec-num" style="background:var(--s3)">3</div><div><p class="eyebrow" style="color:var(--s3)">Simulateurs gratuits et outils de suivi</p><h2>Outils de l'investisseur</h2><p class="lead">Des simulateurs pour faire vos calculs, et des outils pour voir clair dans ce que vous avez. Socle ne vous dit jamais quoi acheter.</p></div></div>
+      <div class="grid2">
+        <a class="tool card" href="outils/portefeuille.html">
+          <div class="head"><h3>Suivi de portefeuille</h3><span class="tag trial">Essai gratuit</span></div>
+          <p>Regroupez PEA, assurance-vie et compte-titres, puis voyez la répartition réelle par zone, secteur et type d'actif.</p>
+          <div class="mock">
+            <div class="cap"><span>Répartition par compte</span><span>Exemple fictif</span></div>
+            <div class="split" style="height:30px;margin-top:10px">
+              <div style="width:46%;background:var(--s1)">PEA 46 %</div><div style="width:31%;background:var(--s2)">Ass.-vie 31 %</div><div style="width:15%;background:var(--s3)">CTO</div><div style="width:8%;background:var(--s4)"></div>
+            </div>
+            <div class="res-row" style="margin-top:12px"><div><b class="num">38 420 €</b><span>valeur totale</span></div><div><b class="num" style="color:var(--up)">+6,8 %</b><span>sur 12 mois</span></div><div><b class="num">0,21 %</b><span>frais annuels moyens</span></div></div>
+          </div>
+        </a>
+        <a class="tool card" href="outils/analyse-entreprise.html">
+          <div class="head"><h3>Analyse d'entreprise</h3><span class="tag sub">Abonnés</span></div>
+          <p>Chiffre d'affaires, marges, dette et dividendes sur 10 ans, expliqués en une phrase sous chaque graphique.</p>
+          <div class="mock">
+            <div class="cap"><span>Chiffre d'affaires sur 5 ans (Md €)</span><span>Entreprise fictive</span></div>
+            <svg viewBox="0 0 320 120" style="width:100%;height:auto;margin-top:8px" role="img" aria-label="Chiffre d'affaires en hausse de 4,1 à 5,6 milliards">
+              <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--muted)">
+                <line x1="0" y1="100" x2="320" y2="100" stroke="var(--line)"/>
+                <rect x="14" y="41" width="40" height="59" rx="4" fill="var(--s3)" opacity=".55"/><text x="34" y="114" text-anchor="middle">2021</text><text x="34" y="36" text-anchor="middle">4,1</text>
+                <rect x="76" y="34" width="40" height="66" rx="4" fill="var(--s3)" opacity=".65"/><text x="96" y="114" text-anchor="middle">2022</text><text x="96" y="29" text-anchor="middle">4,6</text>
+                <rect x="138" y="30" width="40" height="70" rx="4" fill="var(--s3)" opacity=".75"/><text x="158" y="114" text-anchor="middle">2023</text><text x="158" y="25" text-anchor="middle">4,9</text>
+                <rect x="200" y="24" width="40" height="76" rx="4" fill="var(--s3)" opacity=".85"/><text x="220" y="114" text-anchor="middle">2024</text><text x="220" y="19" text-anchor="middle">5,3</text>
+                <rect x="262" y="20" width="40" height="80" rx="4" fill="var(--s3)"/><text x="282" y="114" text-anchor="middle">2025</text><text x="282" y="15" text-anchor="middle">5,6</text>
+              </g>
+            </svg>
+          </div>
+        </a>
+        <a class="tool card" href="outils/alertes.html">
+          <div class="head"><h3>Listes et alertes</h3><span class="tag sub">Abonnés</span></div>
+          <p>Suivez les valeurs qui vous intéressent et soyez prévenu quand un cours franchit le seuil que vous avez fixé.</p>
+          <div class="mock">
+            <div class="cap"><span>Ma liste</span><span>Exemple fictif</span></div>
+            <div class="wl">
+              <div><span>Ventor Énergie</span><span class="num" style="color:var(--up)">+1,4 %</span><span class="alert">seuil 42 €</span></div>
+              <div><span>Halde Industrie</span><span class="num" style="color:var(--down)">−0,8 %</span><span></span></div>
+              <div><span>ETF Monde (exemple)</span><span class="num" style="color:var(--up)">+0,3 %</span><span></span></div>
+            </div>
+          </div>
+        </a>
+        <a class="tool card" href="outils/grands-fonds.html">
+          <div class="head"><h3>Positions des grands fonds</h3><span class="tag sub">Abonnés</span></div>
+          <p>Ce que détiennent les grands gérants, d'après leurs déclarations publiques trimestrielles, avec les entrées et sorties.</p>
+          <div class="mock">
+            <div class="cap"><span>Poids dans un fonds</span><span>Exemple fictif</span></div>
+            <div style="margin-top:8px">
+              <div class="fund"><span>Technologie</span><div class="bar" style="width:100%"></div><span class="num">34 %</span></div>
+              <div class="fund"><span>Santé</span><div class="bar" style="width:53%;opacity:.8"></div><span class="num">18 %</span></div>
+              <div class="fund"><span>Finance</span><div class="bar" style="width:44%;opacity:.65"></div><span class="num">15 %</span></div>
+              <div class="fund"><span>Consommation</span><div class="bar" style="width:32%;opacity:.5"></div><span class="num">11 %</span></div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="vp card">
+        <div>
+          <span class="tag sub">Gratuit · argent fictif</span>
+          <h3 style="font-size:1.35rem;margin-top:10px">S'entraîner avec un portefeuille virtuel</h3>
+          <p class="muted" style="margin-top:8px">Recevez un capital fictif, achetez des actions, des fonds indiciels, des obligations et de l'or, puis faites avancer le temps : dividendes, coupons, actualités et secousses du marché. Les vrais réflexes, sans risquer un euro.</p>
+          <div class="hero-actions" style="margin-top:16px"><a class="btn" href="outils/portefeuille-virtuel.html" style="background:var(--s3);color:#fff">Ouvrir mon portefeuille virtuel</a></div>
+        </div>
+        <ul class="check" style="display:grid;gap:6px">
+          <li>Entreprises et cours fictifs, comportements réalistes</li>
+          <li>Temps accéléré, dividendes et coupons versés</li>
+          <li>Badges pour chaque bon réflexe</li>
+          <li>Tout reste enregistré dans votre navigateur</li>
+        </ul>
+      </div>
+
+      <div class="more"><span class="muted small" style="align-self:center">Simulateurs gratuits :</span><a href="outils/budget.html">Budget 50/30/20</a><a href="outils/epargne.html">Épargne et intérêts composés</a><a href="outils/dca.html">Investissement programmé</a><a href="outils/credit.html">Crédit</a><a href="outils/objectif.html">Objectif</a><a href="outils/enveloppes.html">Enveloppes</a><a href="outils/impot.html">Impôt</a><a href="outils/inflation.html">Inflation</a><a href="outils/index.html">Tous les outils →</a></div>
+    </div>
+  </section>
+
+  <section id="formules">
+    <div class="wrap">
+      <div class="sec-head"><div class="sec-num" style="background:var(--s4)">4</div><div><p class="eyebrow" style="color:var(--s4)">Sans engagement</p><h2>Formules et compte</h2><p class="lead">Le gratuit reste gratuit. L'abonnement débloque les guides complets et les outils de suivi, et se résilie en deux clics.</p></div></div>
+      <div class="grid3">
+        <article class="price card">
+          <h3>Découverte</h3>
+          <p class="amt">0 € <small>pour toujours</small></p>
+          <ul><li>Guide de démarrage et 8 leçons</li><li>Tous les simulateurs gratuits</li><li>Portefeuille virtuel</li><li>3 analyses d'entreprise par mois</li><li>La lettre du mois</li></ul>
+          <a class="btn ghost" href="formules/compte.html?formule=decouverte">Créer mon compte</a>
+          <p class="fine">Une adresse e-mail suffit.</p>
+        </article>
+        <article class="price card hl">
+          <span class="flag">Le plus choisi</span>
+          <h3>Mensuel</h3>
+          <p class="amt">4,50 € <small>par mois</small></p>
+          <ul><li>Les 20 guides complets</li><li>Suivi de portefeuille</li><li>Analyses illimitées</li><li>Listes et alertes</li><li>Positions des grands fonds</li></ul>
+          <a class="btn" style="background:var(--s4);color:#fff" href="formules/compte.html?formule=mensuel">Essayer 14 jours</a>
+          <p class="fine">Résiliable en ligne à tout moment.</p>
+        </article>
+        <article class="price card">
+          <h3>Annuel</h3>
+          <p class="amt">45 € <small>une fois</small></p>
+          <ul><li>Tout le contenu du mensuel</li><li>Pendant 12 mois</li><li>Pas de renouvellement automatique</li><li>Peut s'offrir</li></ul>
+          <a class="btn ghost" href="formules/compte.html?formule=annuel">Choisir l'annuel</a>
+          <p class="fine">Soit 3,75 € par mois.</p>
+        </article>
+      </div>
+      <p class="muted small" style="margin-top:14px">Prix TTC. Site de démonstration : aucun paiement n'est demandé. <a href="formules/index.html#comparer">Comparer les formules en détail</a></p>
+      <div class="acct"><a href="formules/compte.html#abonnement">Gérer mon abonnement</a><a href="apprendre/progression.html">Ma progression et mes badges</a><a href="formules/lettre.html">La lettre du mois</a></div>
+    </div>
+  </section>
+
+  <section id="equipe" style="background:var(--surface);border-block:1px solid var(--line)">
+    <div class="wrap trust">
+      <div>
+        <p class="eyebrow">Qui fait Socle</p>
+        <h2>Une petite rédaction indépendante</h2>
+        <p class="lead" style="margin-top:14px">Socle est écrit par une équipe de trois personnes, sans actionnaire bancaire ni partenariat avec un courtier. Nous vivons des abonnements, pas des commissions : nous n'avons rien à vous vendre d'autre.</p>
+        <p class="muted" style="margin-top:14px">Une question, une erreur repérée ? Écrivez-nous depuis la <a href="contact/index.html">page contact</a>, nous répondons sous 48 h.</p>
+        <div class="hero-actions"><a class="btn ghost" href="equipe/index.html#methode">Notre méthode</a><a class="btn ghost" href="equipe/index.html">À propos</a><a class="btn ghost" href="faq/index.html">Questions fréquentes</a></div>
+      </div>
+      <div class="promises">
+        <div class="card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Aucun contenu sponsorisé</b><p class="muted small">Pas de lien affilié, pas de placement de produit, pas de « partenaire ».</p></div></div>
+        <div class="card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Aucune recommandation d'achat</b><p class="muted small">Nous expliquons comment analyser. La décision vous appartient.</p></div></div>
+        <div class="card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Des sources à chaque page</b><p class="muted small">Textes de loi, publications officielles, études : tout est cité et daté.</p></div></div>
+        <div class="card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Des exemples recalculés</b><p class="muted small">Chaque chiffre d'exemple est revérifié à chaque mise à jour.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>Comprendre d'abord. Le reste suit.</h2>
+      <p class="lead" style="margin-top:10px">Commencez par l'espace 1, gratuit, et avancez à votre rythme.</p>
+      <div class="cols">
+        <div><h3><i style="background:var(--s1)"></i>Apprendre</h3><ul><li><a href="apprendre/index.html">Guide de démarrage</a></li><li><a href="apprendre/lecons.html">Leçons express</a></li><li><a href="apprendre/progression.html">Badges</a></li><li><a href="glossaire/index.html">Glossaire</a></li></ul></div>
+        <div><h3><i style="background:var(--s2)"></i>Guides</h3><ul><li><a href="guides/etf.html">ETF</a></li><li><a href="guides/pea.html">PEA</a></li><li><a href="guides/assurance-vie.html">Assurance-vie</a></li><li><a href="guides/index.html">Tous les guides</a></li></ul></div>
+        <div><h3><i style="background:var(--s3)"></i>Outils</h3><ul><li><a href="outils/budget.html">Budget</a></li><li><a href="outils/epargne.html">Épargne</a></li><li><a href="outils/portefeuille-virtuel.html">Portefeuille virtuel</a></li><li><a href="outils/index.html">Tous les outils</a></li></ul></div>
+        <div><h3><i style="background:var(--s4)"></i>Compte</h3><ul><li><a href="formules/index.html">Formules</a></li><li><a href="apprendre/progression.html">Progression</a></li><li><a href="formules/lettre.html">Lettre du mois</a></li><li><a href="formules/compte.html">Connexion</a></li></ul></div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+document.addEventListener("socle:ready", function () {
+  var $ = function (s) { return document.querySelector(s); };
+  // Recherche de l'accueil
+  var q = $("#q"), res = $("#sres");
+  function run() {
+    if (!q.value.trim()) { res.hidden = true; return; }
+    res.innerHTML = Socle.searchResultsHTML(Socle.search(q.value, 7)); res.hidden = false;
+  }
+  q.addEventListener("input", run); q.addEventListener("focus", run);
+  q.addEventListener("keydown", function (e) { if (e.key === "Enter") { var a = res.querySelector("a"); if (a) location.href = a.href; } });
+  document.addEventListener("click", function (e) { if (!e.target.closest(".sbox")) res.hidden = true; });
+  [].forEach.call(document.querySelectorAll(".chip"), function (c) { c.addEventListener("click", function (e) { e.stopPropagation(); q.value = c.textContent; run(); q.focus(); }); });
+  // Bandeau de progression pour les visiteurs qui ont déjà commencé
+  var p = Socle.progress.get();
+  if (p.xp > 0) {
+    var l = Socle.progress.level(p.xp);
+    $("#welcome").classList.add("on");
+    $("#wLvl").textContent = "Niveau : " + l.name + " · " + p.xp + " XP";
+    $("#wTxt").textContent = p.chapters.length + " chapitre(s) sur 8, " + p.lessons.length + " leçon(s) sur 8, " + p.badges.length + " badge(s).";
+    $("#wBar").style.width = (l.next ? Math.round((p.xp - l.min) / (l.next.x - l.min) * 100) : 100) + "%";
+  }
+});
+</script>
+</body>
+</html>

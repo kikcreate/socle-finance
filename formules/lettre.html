@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>La lettre du mois · Socle</title>
+<meta name="description" content="La lettre du mois de Socle : une notion expliquée, un chiffre à comprendre et les règles qui changent. Gratuite, un e-mail par mois.">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js"></script>
+<style>
+.issue{padding:30px}
+.issue .meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.issue h2.t{font-size:clamp(1.4rem,3vw,1.9rem);margin-top:10px}
+.bignum{font-family:var(--mono);font-size:clamp(2rem,6vw,3.2rem);font-weight:600;color:var(--s2);line-height:1}
+.sub{padding:22px;display:grid;gap:12px}
+</style>
+</head>
+<body>
+<main>
+  <div class="page-hero" style="--c:var(--s2)">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Formules</a><span aria-hidden="true">›</span><span>La lettre du mois</span></nav>
+      <p class="eyebrow">Gratuite · un e-mail par mois</p>
+      <h1>La lettre du mois</h1>
+      <p class="lead">Une notion expliquée à fond, un chiffre à comprendre, les règles qui changent. Cinq minutes de lecture, jamais de recommandation d'achat, jamais de publicité.</p>
+    </div>
+  </div>
+  <section class="tight">
+    <div class="wrap with-side">
+      <div>
+        <article class="issue card">
+          <div class="meta"><span class="tag">N° 23</span><span class="small muted">Novembre 2026 · 5 min</span></div>
+          <h2 class="t">Pourquoi votre banque n'aime pas les ETF</h2>
+          <div class="prose mt-m">
+            <h3>La notion du mois : la rétrocession</h3>
+            <p>Quand un conseiller bancaire vous propose un fonds « maison » avec 2 % de frais annuels plutôt qu'un ETF à 0,2 %, ce n'est pas forcément parce qu'il le juge meilleur. Une partie des frais du fonds peut revenir au distributeur : c'est la <strong>rétrocession</strong>. Elle est légale et doit être mentionnée dans les documents précontractuels, mais rarement mise en avant.</p>
+            <p>Les ETF, eux, rapportent très peu au distributeur. C'est l'une des raisons pour lesquelles ils sont souvent absents des propositions en agence et des contrats d'assurance-vie de réseau.</p>
+            <h3>Le chiffre du mois</h3>
+            <p class="bignum">≈ 40 %</p>
+            <p>C'est l'écart approximatif de capital final, après 30 ans, entre deux placements identiques dont l'un coûte 2 % par an et l'autre 0,2 %, avec un rendement brut de 6 %. Vérifiez avec vos propres chiffres dans le <a href="../outils/frais.html">simulateur de frais</a>.</p>
+            <h3>Ce qui change</h3>
+            <ul>
+              <li>Les plafonds des livrets réglementés restent inchangés : 22 950 € pour le livret A, 12 000 € pour le LDDS.</li>
+              <li>Pensez à vérifier avant le 31 décembre vos versements sur PER si vous souhaitez les déduire des revenus de l'année : le <a href="../outils/per.html">simulateur PER</a> estime l'économie d'impôt.</li>
+            </ul>
+            <h3>Pour aller plus loin</h3>
+            <p>Le guide <a href="../guides/frais.html">« Les frais qui grignotent le rendement »</a> détaille chaque type de frais et la façon de les repérer.</p>
+            <p class="small muted">Contenu pédagogique, pas un conseil en investissement. Tout placement comporte un risque de perte en capital.</p>
+          </div>
+        </article>
+
+        <h2 class="mt-l" style="font-size:1.4rem">Les numéros précédents</h2>
+        <div class="faq mt-m">
+          <details class="card"><summary>N° 22 · Octobre 2026 · Le DCA expliqué à ma grand-mère</summary><div><p>Investir la même somme chaque mois, c'est acheter plus de parts quand c'est bas et moins quand c'est haut. Pourquoi cela ne bat pas toujours un versement unique, mais protège presque toujours contre les regrets. Chiffre du mois : 12, le nombre d'achats par an qui suffisent à lisser l'essentiel des à-coups.</p><p><a href="../outils/dca.html">Simulateur d'investissement programmé</a> · <a href="../guides/diversifier-investir-regulierement.html">Le guide</a></p></div></details>
+          <details class="card"><summary>N° 21 · Septembre 2026 · Ce que votre IFU essaie de vous dire</summary><div><p>Dividendes, plus-values, moins-values reportables : le document fiscal de votre banque décrypté case par case, et les trois erreurs les plus fréquentes au moment de la déclaration.</p><p><a href="../guides/declarer-ses-placements.html">Le guide « Déclarer ses placements »</a> · <a href="../glossaire/index.html#ifu">IFU dans le glossaire</a></p></div></details>
+          <details class="card"><summary>N° 20 · Août 2026 · Krach : mode d'emploi pour ne rien faire</summary><div><p>Les marchés ont toujours connu des chutes de 20 % ou plus. Comment s'y préparer avant, quoi regarder pendant, et pourquoi la meilleure décision est souvent de relire sa stratégie plutôt que d'agir.</p><p><a href="../outils/krachs.html">L'historique des krachs</a> · <a href="../guides/cycles-de-marche.html">Comprendre les cycles de marché</a></p></div></details>
+        </div>
+      </div>
+      <aside class="side-sticky">
+        <form class="sub card form" id="subForm" novalidate>
+          <h2 style="font-size:1.1rem">Recevoir la lettre</h2>
+          <label>Votre adresse e-mail<input name="email" type="email" required placeholder="prenom@exemple.fr"></label>
+          <button class="btn" type="submit" style="background:var(--s2);color:#fff">Je m'inscris</button>
+          <p class="small muted" id="subOut" role="status">Démonstration : aucune adresse n'est enregistrée ni transmise.</p>
+        </form>
+        <div class="card toc"><h2>Aussi dans l'espace 4</h2><ul><li><a href="index.html">Les formules</a></li><li><a href="compte.html">Mon compte</a></li><li><a href="../apprendre/progression.html">Ma progression</a></li></ul></div>
+      </aside>
+    </div>
+  </section>
+</main>
+<script>
+document.addEventListener("socle:ready", function () {
+  var f = document.getElementById("subForm"), a = Socle.account.get();
+  if (a && a.email) f.email.value = a.email;
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value)) { document.getElementById("subOut").textContent = "Cette adresse e-mail ne semble pas valide."; return; }
+    var acc = Socle.account.get(); if (acc) { acc.letter = true; Socle.account.set(acc); }
+    document.getElementById("subOut").textContent = "C'est noté. Dans la vraie version, le prochain numéro arriverait début décembre.";
+    Socle.progress.unlock("letter");
+  });
+});
+</script>
+</body>
+</html>

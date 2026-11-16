@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mon compte · Socle</title>
+<meta name="description" content="Créez votre compte Socle de démonstration, gérez votre abonnement, votre lettre du mois et votre progression.">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js"></script>
+<style>
+.auth{max-width:520px;margin:0 auto;padding:26px}
+.auth .tabs{margin-bottom:20px}
+.dash{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+@media (max-width:820px){.dash{grid-template-columns:1fr}}
+.panel{padding:24px;display:grid;gap:12px;align-content:start;scroll-margin-top:90px}
+.panel h2{font-size:1.2rem}
+.plan-line{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.status{font-weight:700}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.danger{color:var(--down)!important;box-shadow:inset 0 0 0 1.5px var(--down)!important}
+.switch{display:flex;gap:12px;align-items:center;font-weight:600}
+.switch input{width:20px;height:20px;accent-color:var(--s1)}
+</style>
+</head>
+<body>
+<main>
+  <div class="page-hero" style="--c:var(--s4)">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Formules</a><span aria-hidden="true">›</span><span>Mon compte</span></nav>
+      <p class="eyebrow">Espace abonné</p>
+      <h1 id="hTitle">Mon compte</h1>
+      <p class="lead" id="hLead">Créez un compte de démonstration pour découvrir l'espace abonné. Rien n'est envoyé : tout reste dans ce navigateur.</p>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="wrap">
+      <!-- Non connecté -->
+      <div id="out" hidden>
+        <div class="auth card">
+          <div class="tabs" role="tablist"><button type="button" role="tab" aria-selected="true" data-t="new">Créer un compte</button><button type="button" role="tab" aria-selected="false" data-t="login">Se connecter</button></div>
+          <form class="form" id="fNew" novalidate>
+            <label>Prénom<input name="name" required autocomplete="given-name" placeholder="Camille"></label>
+            <label>Adresse e-mail<input name="email" type="email" required autocomplete="email" placeholder="prenom@exemple.fr"></label>
+            <label>Formule<select name="plan"><option value="decouverte">Découverte · 0 €</option><option value="mensuel">Mensuel · 4,50 € par mois, 14 jours d'essai</option><option value="annuel">Annuel · 45 € pour 12 mois</option></select></label>
+            <label class="check"><input type="checkbox" name="letter" checked> Recevoir la lettre du mois (un e-mail mensuel, désinscription en un clic)</label>
+            <label class="check"><input type="checkbox" name="cgv" required> J'accepte les <a href="../legal/cgv.html">conditions de vente</a> et j'ai lu l'<a href="../legal/risques.html">avertissement sur les risques</a></label>
+            <p class="err" id="eNew" role="alert"></p>
+            <button class="btn" type="submit" style="background:var(--s4);color:#fff">Créer mon compte</button>
+            <p class="small muted">Démonstration : aucun paiement, aucune adresse transmise. Voir notre <a href="../legal/confidentialite.html">politique de confidentialité</a>.</p>
+          </form>
+          <form class="form" id="fLogin" hidden novalidate>
+            <label>Adresse e-mail<input name="email" type="email" required autocomplete="email" placeholder="prenom@exemple.fr"></label>
+            <label>Mot de passe<input name="pw" type="password" autocomplete="current-password" placeholder="Non vérifié dans la démonstration"></label>
+            <p class="err" id="eLogin" role="alert"></p>
+            <button class="btn" type="submit">Se connecter</button>
+            <p class="small muted">Le compte de démonstration n'existe que dans le navigateur où vous l'avez créé.</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Connecté -->
+      <div id="in" hidden>
+        <div class="dash">
+          <div class="panel card" id="abonnement" style="border-top:5px solid var(--s4)">
+            <h2>Mon abonnement</h2>
+            <div class="plan-line"><span class="tag" id="planTag">Formule</span><span class="status" id="planStatus"></span></div>
+            <p class="muted small" id="planInfo"></p>
+            <div class="btns" id="planBtns"></div>
+            <p class="small muted">Démonstration : aucun paiement. <a href="../legal/resiliation.html">Conditions de résiliation</a>.</p>
+          </div>
+          <div class="panel card" id="progression" style="border-top:5px solid var(--s1)">
+            <h2>Ma progression</h2>
+            <p class="muted" id="progTxt"></p>
+            <div class="progress" aria-hidden="true"><i id="progBar" style="width:0"></i></div>
+            <div class="btns"><a class="btn ghost" href="../apprendre/progression.html">Mes badges</a><a class="btn ghost" href="../apprendre/index.html" id="progGo">Reprendre le guide</a></div>
+          </div>
+          <div class="panel card" id="lettre" style="border-top:5px solid var(--s2)">
+            <h2>La lettre du mois</h2>
+            <label class="switch"><input type="checkbox" id="letterT"> <span id="letterTxt">Je reçois la lettre du mois</span></label>
+            <p class="muted small">Un e-mail par mois : une notion expliquée, un chiffre à comprendre, les changements de règles à connaître. <a href="lettre.html">Lire le dernier numéro</a>.</p>
+          </div>
+          <div class="panel card" id="donnees" style="border-top:5px solid var(--s3)">
+            <h2>Mes informations</h2>
+            <form class="form" id="fInfo">
+              <div class="row"><label>Prénom<input name="name" required></label><label>E-mail<input name="email" type="email" required></label></div>
+              <div class="btns"><button class="btn ghost" type="submit">Enregistrer</button><button class="btn ghost" type="button" id="logout">Se déconnecter</button><button class="btn ghost danger" type="button" id="del">Supprimer mon compte</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+document.addEventListener("socle:ready", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var PLANS = { decouverte: { n: "Découverte", p: "0 €" }, mensuel: { n: "Mensuel", p: "4,50 € par mois" }, annuel: { n: "Annuel", p: "45 € pour 12 mois" } };
+  var A = Socle.account;
+  var fmt = function (ts) { return new Date(ts).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" }); };
+  var DAY = 864e5;
+  var qp = new URLSearchParams(location.search).get("formule");
+  if (qp && PLANS[qp]) $("fNew").plan.value = qp;
+
+  // Onglets création / connexion
+  [].forEach.call(document.querySelectorAll("[data-t]"), function (b) {
+    b.addEventListener("click", function () {
+      [].forEach.call(document.querySelectorAll("[data-t]"), function (x) { x.setAttribute("aria-selected", String(x === b)); });
+      $("fNew").hidden = b.dataset.t !== "new"; $("fLogin").hidden = b.dataset.t !== "login";
+    });
+  });
+
+  function setPlan(a, plan) {
+    var now = Date.now();
+    a.plan = plan; a.cancelled = false;
+    if (plan === "mensuel") { a.trialEnd = now + 14 * DAY; a.endsAt = null; }
+    else if (plan === "annuel") { a.trialEnd = null; a.endsAt = now + 365 * DAY; }
+    else { a.trialEnd = null; a.endsAt = null; }
+  }
+
+  $("fNew").addEventListener("submit", function (e) {
+    e.preventDefault(); var f = e.target;
+    if (!f.name.value.trim()) return $("eNew").textContent = "Indiquez votre prénom.";
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value)) return $("eNew").textContent = "Cette adresse e-mail ne semble pas valide.";
+    if (!f.cgv.checked) return $("eNew").textContent = "Merci d'accepter les conditions de vente.";
+    var a = { name: f.name.value.trim(), email: f.email.value.trim(), created: Date.now(), letter: f.letter.checked, logged: true };
+    setPlan(a, f.plan.value); A.set(a);
+    Socle.progress.unlock("account"); if (a.letter) Socle.progress.unlock("letter");
+    Socle.toast("Compte créé. Bienvenue, " + a.name + " !"); draw();
+  });
+  $("fLogin").addEventListener("submit", function (e) {
+    e.preventDefault(); var a = A.get(), em = e.target.email.value.trim().toLowerCase();
+    if (a && a.email.toLowerCase() === em) { a.logged = true; A.set(a); Socle.toast("Bon retour, " + a.name + " !"); draw(); }
+    else $("eLogin").textContent = "Aucun compte de démonstration avec cette adresse dans ce navigateur. Créez-en un, c'est immédiat.";
+  });
+
+  function draw() {
+    var a = A.get(), logged = a && a.logged;
+    $("out").hidden = !!logged; $("in").hidden = !logged;
+    var lg = document.querySelector(".nav-util .login"); if (lg) lg.textContent = logged ? "Mon compte" : "Connexion";
+    if (!logged) { $("hTitle").textContent = "Mon compte"; return; }
+    $("hTitle").textContent = "Bonjour " + a.name;
+    $("hLead").textContent = "Votre espace de démonstration : abonnement, progression, lettre du mois et informations. Tout reste dans ce navigateur.";
+    var P = PLANS[a.plan], now = Date.now(), st, info, btns = [];
+    $("planTag").textContent = P.n + " · " + P.p;
+    if (a.plan === "decouverte") { st = "Actif"; info = "Accès gratuit et illimité au guide de démarrage, aux leçons, aux simulateurs et au portefeuille virtuel."; btns.push(["mensuel", "Essayer le mensuel 14 jours"], ["annuel", "Passer à l'annuel"]); }
+    else if (a.plan === "mensuel") {
+      if (a.cancelled) { st = "Résilié"; info = "Votre accès reste ouvert jusqu'au " + fmt(a.trialEnd && a.trialEnd > now ? a.trialEnd : now + 30 * DAY) + ", puis repasse en Découverte."; btns.push(["resume", "Reprendre l'abonnement"]); }
+      else if (a.trialEnd && a.trialEnd > now) { st = "Essai gratuit"; info = "Essai jusqu'au " + fmt(a.trialEnd) + " (" + Math.ceil((a.trialEnd - now) / DAY) + " jours restants). Rappel trois jours avant la fin."; btns.push(["cancel", "Résilier"], ["annuel", "Passer à l'annuel"]); }
+      else { st = "Actif"; info = "Prochain prélèvement fictif de 4,50 € le " + fmt(now + 30 * DAY) + "."; btns.push(["cancel", "Résilier"], ["annuel", "Passer à l'annuel"]); }
+    } else { st = "Actif"; info = "Accès complet jusqu'au " + fmt(a.endsAt) + ", sans renouvellement automatique."; btns.push(["decouverte", "Revenir à Découverte"]); }
+    $("planStatus").textContent = st; $("planInfo").textContent = info;
+    $("planBtns").innerHTML = btns.map(function (b) { return '<button type="button" class="btn ' + (b[0] === "cancel" ? "ghost danger" : "ghost") + '" data-act="' + b[0] + '">' + b[1] + "</button>"; }).join("");
+    [].forEach.call($("planBtns").querySelectorAll("button"), function (b) {
+      b.addEventListener("click", function () {
+        var a2 = A.get(), act = b.dataset.act;
+        if (act === "cancel") { if (b.dataset.armed) { a2.cancelled = true; A.set(a2); Socle.toast("Abonnement résilié. Aucun autre prélèvement."); draw(); } else { b.dataset.armed = "1"; b.textContent = "Confirmer la résiliation"; } return; }
+        if (act === "resume") { a2.cancelled = false; A.set(a2); Socle.toast("Abonnement repris."); return draw(); }
+        setPlan(a2, act); A.set(a2); Socle.toast("Formule " + PLANS[act].n + " activée (démonstration)."); draw();
+      });
+    });
+    var p = Socle.progress.get(), l = Socle.progress.level(p.xp);
+    $("progTxt").textContent = "Niveau " + l.name + " · " + p.xp + " XP · " + p.chapters.length + "/8 chapitres · " + p.lessons.length + "/8 leçons · " + p.badges.length + " badge(s).";
+    $("progBar").style.width = (p.chapters.length / 8 * 100) + "%";
+    var next = 1; while (p.chapters.indexOf(next) > -1 && next <= 8) next++;
+    $("progGo").href = next > 8 ? "../apprendre/lecons.html" : "../apprendre/chapitre-" + next + ".html";
+    $("progGo").textContent = next > 8 ? "Réviser avec les leçons" : (p.chapters.length ? "Reprendre au chapitre " + next : "Commencer le guide");
+    $("letterT").checked = !!a.letter; $("letterTxt").textContent = a.letter ? "Je reçois la lettre du mois" : "Je ne reçois pas la lettre";
+    var fi = $("fInfo"); fi.name.value = a.name; fi.email.value = a.email;
+  }
+  $("letterT").addEventListener("change", function () { var a = A.get(); a.letter = this.checked; A.set(a); if (a.letter) Socle.progress.unlock("letter"); Socle.toast(a.letter ? "Inscription à la lettre enregistrée." : "Désinscription enregistrée."); draw(); });
+  $("fInfo").addEventListener("submit", function (e) { e.preventDefault(); var a = A.get(); a.name = e.target.name.value.trim() || a.name; a.email = e.target.email.value.trim() || a.email; A.set(a); Socle.toast("Informations enregistrées."); draw(); });
+  $("logout").addEventListener("click", function () { var a = A.get(); a.logged = false; A.set(a); Socle.toast("Vous êtes déconnecté."); draw(); scrollTo(0, 0); });
+  $("del").addEventListener("click", function () {
+    if (!this.dataset.armed) { this.dataset.armed = "1"; this.textContent = "Confirmer la suppression"; return; }
+    A.clear(); Socle.toast("Compte supprimé de ce navigateur."); draw(); scrollTo(0, 0);
+  });
+  document.addEventListener("socle:progress", function () { if (A.get() && A.get().logged) draw(); });
+  draw();
+  if (location.hash && A.get() && A.get().logged) { var t = document.querySelector(location.hash); if (t) t.scrollIntoView(); }
+});
+</script>
+</body>
+</html>

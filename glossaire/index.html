@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Glossaire de la bourse et de l'épargne · Socle</title>
+<meta name="description" content="Plus de 80 mots de la bourse, de l'épargne et de la fiscalité expliqués simplement : action, ETF, PEA, dividende, volatilité, intérêts composés…">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/glossaire-data.js"></script>
+<style>
+.gtools{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:end}
+@media (max-width:700px){.gtools{grid-template-columns:1fr}}
+.gtools input,.gtools select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.letters{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.letters a{min-width:34px;height:34px;padding:0 6px;border-radius:8px;display:grid;place-items:center;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-family:var(--mono);font-weight:600;font-size:.88rem}
+.letters a:hover{border-color:var(--ink)}
+.letters span{min-width:34px;height:34px;display:grid;place-items:center;color:var(--line);font-family:var(--mono)}
+.gl-letter{font-family:var(--display);font-size:1.6rem;color:var(--s2);margin:30px 0 10px;scroll-margin-top:90px}
+.gl-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:760px){.gl-list{grid-template-columns:1fr}}
+.term{padding:16px 18px;scroll-margin-top:96px;transition:box-shadow .3s}
+.term h3{font-size:1rem;display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.term h3 a{font-family:var(--body);font-size:.75rem;color:var(--muted);text-decoration:none;font-weight:600}
+.term p{color:var(--muted);margin-top:6px;font-size:.95rem}
+.term .tag{margin-top:10px}
+.term:target,.term.hl{box-shadow:0 0 0 3px var(--s2)}
+.empty{padding:30px;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="page-hero" style="--c:var(--s2)">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="../apprendre/index.html">Apprendre</a><span aria-hidden="true">›</span><span>Glossaire</span></nav>
+      <p class="eyebrow">Glossaire</p>
+      <h1>Les mots de la bourse, sans jargon</h1>
+      <p class="lead" id="gCount">Chaque terme expliqué en une ou deux phrases. Les guides et les chapitres renvoient ici dès qu'un mot technique apparaît.</p>
+      <div class="gtools mt-m">
+        <label class="small" style="font-weight:700;display:grid;gap:6px">Chercher un mot<input type="search" id="glossQ" placeholder="dividende, ETF, volatilité…" autocomplete="off"></label>
+        <label class="small" style="font-weight:700;display:grid;gap:6px">Thème<select id="glossCat"><option value="">Tous les thèmes</option></select></label>
+      </div>
+      <nav class="letters" id="letters" aria-label="Aller à la lettre"></nav>
+    </div>
+  </div>
+  <section class="tight">
+    <div class="wrap">
+      <div id="gloss"></div>
+      <div class="callout info mt-l"><b>Un mot manque ?</b>Proposez-le depuis la <a href="../contact/index.html">page contact</a> : nous ajoutons au glossaire les termes que nos lecteurs cherchent.</div>
+    </div>
+  </section>
+</main>
+<script>
+document.addEventListener("socle:ready", function () {
+  var G = (window.SOCLE_GLOSS || []).slice().sort(function (a, b) { return a[1].localeCompare(b[1], "fr"); });
+  var $ = function (id) { return document.getElementById(id); }, n = Socle.norm, esc = Socle.esc;
+  $("gCount").textContent = G.length + " termes expliqués en une ou deux phrases. Les guides et les chapitres renvoient ici dès qu'un mot technique apparaît.";
+  var cats = []; G.forEach(function (g) { if (cats.indexOf(g[3]) < 0) cats.push(g[3]); }); cats.sort();
+  $("glossCat").innerHTML += cats.map(function (c) { return "<option>" + esc(c) + "</option>"; }).join("");
+  var first = function (t) { return n(t).charAt(0).toUpperCase(); };
+  var searched = false;
+  function draw() {
+    var q = n($("glossQ").value.trim()), c = $("glossCat").value;
+    var list = G.filter(function (g) { return (!c || g[3] === c) && (!q || n(g[1] + " " + g[2]).indexOf(q) > -1); });
+    var by = {}; list.forEach(function (g) { (by[first(g[1])] = by[first(g[1])] || []).push(g); });
+    var L = Object.keys(by).sort();
+    $("letters").innerHTML = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(function (x) { return by[x] ? '<a href="#lettre-' + x + '">' + x + "</a>" : '<span aria-hidden="true">' + x + "</span>"; }).join("");
+    $("gloss").innerHTML = L.length ? L.map(function (x) {
+      return '<h2 class="gl-letter" id="lettre-' + x + '">' + x + '</h2><div class="gl-list">' + by[x].map(function (g) {
+        return '<article class="term card" id="' + g[0] + '"><h3>' + esc(g[1]) + '<a href="#' + g[0] + '" aria-label="Lien vers ' + esc(g[1]) + '">#</a></h3><p>' + esc(g[2]) + '</p><span class="tag">' + esc(g[3]) + "</span></article>";
+      }).join("") + "</div>";
+    }).join("") : '<p class="empty card">Aucun terme ne correspond. Essayez un autre mot ou <a href="../contact/index.html">proposez-le</a>.</p>';
+    if (q && !searched) { searched = true; Socle.progress.unlock("gloss"); }
+  }
+  $("glossQ").addEventListener("input", draw); $("glossCat").addEventListener("change", draw);
+  draw();
+  if (location.hash.length > 1) {
+    var t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (t) { t.scrollIntoView(); t.classList.add("hl"); setTimeout(function () { t.classList.remove("hl"); }, 2500); Socle.progress.unlock("gloss"); }
+  }
+});
+</script>
+</body>
+</html>

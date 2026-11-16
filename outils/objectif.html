@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Objectif financier · Socle</title>
+<meta name="description" content="Calculez l&#x27;effort d&#x27;épargne mensuel nécessaire pour atteindre un montant à une date donnée, selon le rendement et l&#x27;inflation.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/objectif.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="objectif">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Objectif financier</span></nav>
+    <p class="eyebrow">Simulateur · Bien démarrer</p>
+    <h1>Atteindre un montant</h1>
+    <p class="lead">Un apport, des études, un projet : combien mettre de côté chaque mois, et quel support choisir selon l'horizon.</p>
+    <p class="mt-s"><span class="tag free">Gratuit</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card sim"><div class="sim-body"><form id="f" novalidate><div class="field"><label for="cible">Montant visé</label><input type="number" id="cible" name="cible" value="30000" min="0" step="500" inputmode="decimal"></div><div class="field"><label for="ans">Dans combien d'années<output for="ans" data-fmt="ans"></output></label><input type="range" id="ans" name="ans" value="5" min="0.5" max="40" step="0.5" inputmode="decimal"></div><div class="field"><label for="deja">Déjà de côté</label><input type="number" id="deja" name="deja" value="2000" min="0" step="100" inputmode="decimal"></div><div class="field"><label for="taux">Rendement annuel supposé<output for="taux" data-fmt="pct"></output></label><input type="range" id="taux" name="taux" value="3" min="0" max="12" step="0.1" inputmode="decimal"></div><label class="chk"><input type="checkbox" name="reel"><span>Le montant est en euros d'aujourd'hui (tenir compte de l'inflation)</span></label><div class="field"><label for="inflation">Inflation supposée</label><input type="number" id="inflation" name="inflation" value="2" min="0" max="8" step="0.1" inputmode="decimal"></div><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form><div class="sim-out" aria-live="polite"><p class="res-lbl">Effort d'épargne mensuel</p><p class="res-big" id="rP">—</p><div class="res-row" id="rRow"></div><p class="verdict" id="verdict"></p><div class="chart" id="chart"></div><div id="tab" class="mt-m"></div></div></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Versements constants en fin de mois, rendement constant capitalisé chaque mois.</li><li>Sous 3 ans, préférez des placements sans risque de perte : un projet à court terme ne laisse pas le temps de se remettre d'une baisse.</li><li>Les rendements du tableau sont des ordres de grandeur, pas des promesses : seul le Livret A a un taux connu à l'avance (révisé deux fois par an).</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">V = (Cible − C₀ × (1 + r)ⁿ) × r / ((1 + r)ⁿ − 1)</p><p>C₀ est ce que vous avez déjà, r le taux mensuel équivalent et n le nombre de mois. Avec l'option inflation, la cible devient Cible × (1 + inflation)^années.</p></div></div><div class="card related" data-guides="epargne-de-precaution,assurance-vie,livret" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="epargne.html">Épargne et intérêts composés</a><a href="budget.html">Budget 50/30/20</a><a href="inflation.html">Inflation et pouvoir d&#x27;achat</a><a href="enveloppes.html">Comparer les enveloppes</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

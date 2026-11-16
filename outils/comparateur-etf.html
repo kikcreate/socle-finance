@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Comparateur d&#x27;ETF · Socle</title>
+<meta name="description" content="Comparez plusieurs ETF ou fonds sur un même indice : frais courants, écart de suivi, éligibilité au PEA, distribution des dividendes.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/comparateur-etf.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="comparateur-etf">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Comparateur d&#x27;ETF</span></nav>
+    <p class="eyebrow">Outil de l'investisseur</p>
+    <h1>Comparateur d'ETF</h1>
+    <p class="lead">Deux fonds qui suivent le même indice ne rapportent pas la même chose. Comparez l'effet des frais courants, de l'écart de suivi et de la distribution des dividendes selon l'enveloppe.</p>
+    <p class="mt-s"><span class="tag sub">Outil de l'investisseur</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card" style="padding:18px"><div class="toolbar"><h2 style="font-size:1.1rem">Fonds comparés</h2><span class="sp"></span><button class="btn ghost small" type="button" id="add">Ajouter un fonds</button><button class="btn ghost small" type="button" id="reset">Revenir à l'exemple</button></div><div class="tbl"><table class="edit-tbl" style="min-width:760px"><thead><tr><th>Fonds</th><th class="r">Frais courants %</th><th class="r">Écart de suivi %/an</th><th>Éligible PEA</th><th>Dividendes</th><th></th></tr></thead><tbody id="rows"></tbody></table></div><p class="hint">Les fonds proposés sont des exemples. Les frais courants figurent dans le document d'informations clés (DIC) de chaque fonds.</p></div><div class="mt-m"><div class="card sim"><div class="sim-body"><form id="f" novalidate><div class="field"><label for="init">Versement de départ</label><input type="number" id="init" name="init" value="10000" min="0" step="500" inputmode="decimal"></div><div class="field"><label for="mens">Versement mensuel</label><input type="number" id="mens" name="mens" value="300" min="0" step="10" inputmode="decimal"></div><div class="field"><label for="ans">Durée<output for="ans" data-fmt="ans"></output></label><input type="range" id="ans" name="ans" value="20" min="1" max="40" step="1" inputmode="decimal"></div><div class="field"><label for="rdt">Rendement annuel de l'indice<output for="rdt" data-fmt="pct"></output></label><input type="range" id="rdt" name="rdt" value="7" min="0" max="12" step="0.1" inputmode="decimal"></div><div class="field"><label for="dy">Dont dividendes</label><input type="number" id="dy" name="dy" value="1.8" min="0" max="5" step="0.1" inputmode="decimal"></div><fieldset class="fieldset"><legend>Enveloppe</legend><div class="seg"><label><input type="radio" name="env" value="pea" checked><span>PEA</span></label><label><input type="radio" name="env" value="cto"><span>Compte-titres</span></label><label><input type="radio" name="env" value="av"><span>Assurance-vie</span></label></div></fieldset><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form><div class="sim-out" aria-live="polite"><p class="res-lbl">Le moins coûteux sur la durée</p><p class="res-big t" id="rBest">—</p><div class="chart" id="chart"></div><div id="tab" class="mt-m"></div></div></div></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Frais courants et écart de suivi sont retirés du rendement chaque année. L'écart de suivi réel peut être positif ou négatif ; il est compté ici comme un coût, par prudence.</li><li>Sur un compte-titres, un fonds distribuant voit ses dividendes imposés à 31,4 % chaque année ; un fonds capitalisant les réinvestit sans impôt immédiat.</li><li>Pour un PEA, seuls les fonds éligibles (investis au moins à 75 % en actions européennes, ou synthétiques) sont possibles.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Rendement net du fonds = rendement de l'indice − frais courants − écart de suivi (− impôt annuel si distribuant sur CTO)</p><p>L'écart de suivi (tracking difference) est la différence annuelle entre la performance du fonds et celle de son indice. C'est le vrai coût, plus parlant que les frais affichés.</p></div></div><div class="card related" data-guides="etf,pea,compte-titres" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="frais.html">Impact des frais</a><a href="frais-courtage.html">Frais de courtage</a><a href="enveloppes.html">Comparer les enveloppes</a><a href="portefeuille.html">Suivi de portefeuille</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

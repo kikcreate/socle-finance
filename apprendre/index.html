@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Apprendre gratuitement · Socle</title>
+<meta name="description" content="Le guide de démarrage Socle en 8 chapitres, 8 leçons express avec quiz, un glossaire et des badges. Gratuit et sans inscription.">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/apprendre.js"></script>
+<style>
+.gp{padding:20px 22px;display:grid;gap:10px}
+.gp .row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:700}
+.alt3{padding:22px;display:flex;flex-direction:column;gap:10px;text-decoration:none;border-top:5px solid var(--c)}
+.alt3:hover{border-color:var(--c)}
+.alt3 .ico{font-family:var(--display);font-weight:800;font-size:1.6rem;color:var(--c)}
+.alt3 p{color:var(--muted)}
+.alt3 span.go{margin-top:auto;font-weight:700;color:var(--c)}
+</style>
+</head>
+<body>
+<main>
+  <div class="page-hero" style="--c:var(--s1)">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><span>Apprendre</span></nav>
+      <div class="sec-head"><div class="sec-num" style="background:var(--s1)">1</div><div>
+        <p class="eyebrow">Espace 1 · Gratuit, sans inscription</p>
+        <h1>Apprendre gratuitement</h1>
+        <p class="lead">Les bases de l'épargne et de la bourse tiennent dans un guide de huit chapitres et huit leçons de trois minutes. Chaque étape se termine par un quiz ; vos progrès, votre niveau et vos badges restent enregistrés dans ce navigateur.</p>
+        <div class="hero-actions"><a class="btn" href="chapitre-1.html" id="goOn" style="background:var(--s1);color:#fff">Commencer le chapitre 1</a><a class="btn ghost" href="lecons.html">Les leçons express</a></div>
+      </div></div>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="wrap with-side">
+      <div>
+        <div class="starter card" style="margin-bottom:26px">
+          <div class="cover" style="background:var(--s1)"><span class="cb">GUIDE DE DÉMARRAGE</span><div class="art"></div><span class="ct">Vos premiers 1 000 € placés</span><span class="cb">8 chapitres · éd. 2026</span></div>
+          <div>
+            <span class="tag free">Offert, en ligne</span>
+            <h2 style="font-size:1.35rem;margin-top:10px">Le guide de démarrage</h2>
+            <p class="muted" style="margin-top:8px">Un parcours dans l'ordre logique : on construit par le bas, du budget au premier ordre de bourse. Comptez une heure et quart au total, à votre rythme.</p>
+            <ul class="check">
+              <li>Faire son budget et constituer une épargne de précaution</li>
+              <li>Comprendre risque, rendement, intérêts composés et inflation</li>
+              <li>Choisir entre livret, assurance-vie, PEA, compte-titres et PER</li>
+              <li>Comprendre les ETF et passer son premier ordre sans se tromper</li>
+            </ul>
+          </div>
+        </div>
+        <h2 style="font-size:1.4rem;margin-bottom:14px">Les 8 chapitres</h2>
+        <div class="chap-list" id="chapList">
+<a class="chap card" href="chapitre-1.html" data-n="1"><span class="no">1</span><div><h3>Faire son budget</h3><p>Savoir où part l'argent avant de chercher à le faire fructifier.</p></div><span class="st">9 min</span></a>
+<a class="chap card" href="chapitre-2.html" data-n="2"><span class="no">2</span><div><h3>L'épargne de précaution</h3><p>Le coussin qui vous évite de vendre au pire moment.</p></div><span class="st">7 min</span></a>
+<a class="chap card" href="chapitre-3.html" data-n="3"><span class="no">3</span><div><h3>Risque, rendement et durée</h3><p>Le triangle qui décide de tout le reste.</p></div><span class="st">10 min</span></a>
+<a class="chap card" href="chapitre-4.html" data-n="4"><span class="no">4</span><div><h3>Intérêts composés et inflation</h3><p>Deux forces invisibles qui travaillent pour ou contre vous.</p></div><span class="st">8 min</span></a>
+<a class="chap card" href="chapitre-5.html" data-n="5"><span class="no">5</span><div><h3>Les grandes familles de placements</h3><p>Actions, obligations, monétaire, immobilier : qui fait quoi.</p></div><span class="st">10 min</span></a>
+<a class="chap card" href="chapitre-6.html" data-n="6"><span class="no">6</span><div><h3>Les enveloppes : où ranger son argent</h3><p>Livret, assurance-vie, PEA, compte-titres, PER : le contenant compte autant que le contenu.</p></div><span class="st">12 min</span></a>
+<a class="chap card" href="chapitre-7.html" data-n="7"><span class="no">7</span><div><h3>ETF, indices et diversification</h3><p>Des centaines d'entreprises en un seul achat.</p></div><span class="st">10 min</span></a>
+<a class="chap card" href="chapitre-8.html" data-n="8"><span class="no">8</span><div><h3>Passer son premier ordre</h3><p>Ouvrir un compte, acheter sans se tromper, puis tenir dans la durée.</p></div><span class="st">11 min</span></a>
+        </div>
+      </div>
+      <aside class="side-sticky">
+        <div class="card gp">
+          <div class="row"><span>Votre avancement</span><span class="num" id="gpTxt">0/8</span></div>
+          <div class="progress" aria-hidden="true"><i id="gpBar" style="width:0"></i></div>
+          <p class="small muted" id="gpLvl">Niveau Première pierre · 0 XP</p>
+          <a class="btn ghost" href="progression.html">Mes badges</a>
+        </div>
+        <div class="callout info"><b>Pas besoin de compte</b>Votre progression est enregistrée dans ce navigateur. Si vous changez d'appareil ou effacez vos données de navigation, elle repart de zéro.</div>
+      </aside>
+    </div>
+  </section>
+
+  <section style="background:var(--surface);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="plain-head"><h2>Trois autres façons d'apprendre</h2><p class="lead">Selon le temps dont vous disposez et votre façon de retenir.</p></div>
+      <div class="grid3">
+        <a class="alt3 card" href="lecons.html" style="--c:var(--s1)"><span class="ico">3 min</span><h3>Les 8 leçons express</h3><p>Une notion, trois paragraphes, deux questions. Idéal dans les transports ou pour réviser.</p><span class="go">Faire une leçon →</span></a>
+        <a class="alt3 card" href="../outils/portefeuille-virtuel.html" style="--c:var(--s3)"><span class="ico">0 €</span><h3>Le portefeuille virtuel</h3><p>Un capital fictif, de vrais mécanismes : achats, dividendes, coupons, actualités et secousses du marché.</p><span class="go">M'entraîner →</span></a>
+        <a class="alt3 card" href="../glossaire/index.html" style="--c:var(--s2)"><span class="ico">A–Z</span><h3>Le glossaire</h3><p>Plus de 80 mots de la bourse et de l'épargne expliqués en une ou deux phrases, sans jargon.</p><span class="go">Chercher un mot →</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+document.addEventListener("socle:ready", function () {
+  function draw() {
+    var p = Socle.progress.get(), done = p.chapters;
+    [].forEach.call(document.querySelectorAll(".chap"), function (a) {
+      var n = +a.dataset.n, ok = done.indexOf(n) > -1;
+      a.classList.toggle("done", ok);
+      if (ok) a.querySelector(".st").textContent = "✓ Terminé";
+    });
+    document.getElementById("gpTxt").textContent = done.length + "/8";
+    document.getElementById("gpBar").style.width = (done.length / 8 * 100) + "%";
+    var l = Socle.progress.level(p.xp);
+    document.getElementById("gpLvl").textContent = "Niveau " + l.name + " · " + p.xp + " XP";
+    var next = 1; while (done.indexOf(next) > -1 && next <= 8) next++;
+    var go = document.getElementById("goOn");
+    if (next > 8) { go.textContent = "Guide terminé : voir mes badges"; go.href = "progression.html"; }
+    else if (done.length) { go.textContent = "Reprendre au chapitre " + next; go.href = "chapitre-" + next + ".html"; }
+  }
+  draw(); document.addEventListener("socle:progress", draw);
+});
+</script>
+</body>
+</html>

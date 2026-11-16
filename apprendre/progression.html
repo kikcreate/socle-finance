@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ma progression et mes badges · Socle</title>
+<meta name="description" content="Votre niveau, votre expérience et vos badges sur Socle : chapitres, leçons, guides, simulateurs et portefeuille virtuel.">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/apprendre.js"></script>
+<style>
+.lvl{padding:26px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center}
+.lvl .medal{width:96px;height:96px;border-radius:24px;background:var(--s1);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:2rem}
+.ladder{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.ladder span{font-size:.78rem;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--soft);color:var(--muted)}
+.ladder span.on{background:var(--s1-soft);color:var(--s1)}
+@media (max-width:560px){.lvl{grid-template-columns:1fr}}
+.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+@media (max-width:900px){.badges{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.badges{grid-template-columns:1fr}}
+.badge{display:flex;gap:12px;align-items:center;padding:14px;border-radius:14px;border:1px dashed var(--line);color:var(--muted);background:transparent}
+.badge .m{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--soft);font-family:var(--display);font-weight:800}
+.badge b{display:block;color:var(--ink);font-size:.95rem;line-height:1.25}
+.badge small{font-size:.82rem;line-height:1.35;display:block}
+.badge.on{border-style:solid;border-color:var(--s1);background:var(--surface)}
+.badge.on .m{background:var(--s1);color:#fff}
+.bgroup h3{margin-top:28px}
+</style>
+</head>
+<body>
+<main>
+  <div class="page-hero" style="--c:var(--s1)">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Apprendre</a><span aria-hidden="true">›</span><span>Progression</span></nav>
+      <p class="eyebrow">Votre parcours</p>
+      <h1>Ma progression et mes badges</h1>
+      <p class="lead">Vous gagnez de l'expérience en terminant les chapitres (+40 XP), en réussissant les leçons (+30 XP), en lisant les guides (+20 XP), en essayant les simulateurs (+10 XP) et en débloquant des badges (+50 XP). Tout reste dans ce navigateur, sans compte.</p>
+    </div>
+  </div>
+  <section class="tight">
+    <div class="wrap">
+      <div class="lvl card">
+        <div class="medal" id="pMedal" aria-hidden="true">1</div>
+        <div>
+          <p class="eyebrow">Niveau actuel</p>
+          <h2 id="pLvl" style="margin-top:4px">Première pierre</h2>
+          <p class="muted mt-s" id="pNext"></p>
+          <div class="progress mt-s" aria-hidden="true"><i id="pBar" style="width:0"></i></div>
+          <div class="ladder" id="pLadder"></div>
+        </div>
+      </div>
+      <div class="kpis mt-m">
+        <a class="kpi card" href="index.html" style="text-decoration:none"><b id="kC">0/8</b><span>chapitres du guide de démarrage</span></a>
+        <a class="kpi card" href="lecons.html" style="text-decoration:none"><b id="kL">0/8</b><span>leçons express validées</span></a>
+        <a class="kpi card" href="../guides/index.html" style="text-decoration:none"><b id="kG">0</b><span>guides lus jusqu'au bout</span></a>
+        <a class="kpi card" href="../outils/index.html" style="text-decoration:none"><b id="kT">0</b><span>simulateurs essayés</span></a>
+        <div class="kpi card"><b id="kB">0</b><span>badges débloqués</span></div>
+      </div>
+      <div id="bGroups"></div>
+      <div class="callout info mt-l"><b>Où sont stockées ces données ?</b>Uniquement dans le stockage local de votre navigateur, sur cet appareil. Socle ne les reçoit pas. <button type="button" class="btn ghost" id="pReset" style="margin-top:10px">Effacer ma progression</button></div>
+    </div>
+  </section>
+</main>
+<script>
+document.addEventListener("socle:ready", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var resetArmed = false;
+  function draw() {
+    var P = Socle.progress, p = P.get(), l = P.level(p.xp);
+    $("pMedal").textContent = l.idx + 1;
+    $("pLvl").textContent = l.name + " · " + p.xp + " XP";
+    $("pNext").textContent = l.next ? "Encore " + (l.next.x - p.xp) + " XP pour atteindre « " + l.next.n + " »." : "Niveau maximal atteint. Bravo !";
+    $("pBar").style.width = (l.next ? Math.round((p.xp - l.min) / (l.next.x - l.min) * 100) : 100) + "%";
+    $("pLadder").innerHTML = P.LEVELS.map(function (x, i) { return '<span class="' + (i <= l.idx ? "on" : "") + '">' + x.n + " · " + x.x + " XP</span>"; }).join("");
+    $("kC").textContent = p.chapters.length + "/8"; $("kL").textContent = p.lessons.length + "/8";
+    $("kG").textContent = p.guides.length; $("kT").textContent = p.tools.length; $("kB").textContent = p.badges.length + "/" + P.BADGES.length;
+    var groups = {};
+    P.BADGES.forEach(function (b) { (groups[b.g] = groups[b.g] || []).push(b); });
+    $("bGroups").innerHTML = Object.keys(groups).map(function (g) {
+      return '<div class="bgroup"><h3>' + Socle.esc(g) + '</h3><div class="badges">' + groups[g].map(function (b) {
+        var on = p.badges.indexOf(b.id) > -1;
+        return '<div class="badge ' + (on ? "on" : "") + '"><span class="m" aria-hidden="true">' + (on ? "✓" : "?") + "</span><span><b>" + Socle.esc(b.t) + "</b><small>" + Socle.esc(b.d) + (on ? "" : " · à débloquer") + "</small></span></div>";
+      }).join("") + "</div></div>";
+    }).join("");
+  }
+  $("pReset").addEventListener("click", function () {
+    if (!resetArmed) { resetArmed = true; this.textContent = "Cliquez encore pour confirmer"; return; }
+    Socle.progress.reset(); resetArmed = false; this.textContent = "Effacer ma progression"; Socle.toast("Progression effacée.");
+  });
+  draw(); document.addEventListener("socle:progress", draw);
+});
+</script>
+</body>
+</html>

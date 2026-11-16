@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Les 8 leçons express · Socle</title>
+<meta name="description" content="Huit leçons de trois minutes avec quiz pour comprendre la bourse : actions, diversification, ETF, obligations, risque, intérêts composés, inflation, pièges du débutant.">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/apprendre.js"></script>
+<style>
+.lessons{display:grid;gap:18px}
+.lesson{padding:24px}
+.lhead{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:16px;align-items:start}
+.lhead .no{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;font-family:var(--display);font-weight:800;background:var(--s1-soft);color:var(--s1)}
+.lesson.done .lhead .no{background:var(--s1);color:#fff}
+.lhead h2{font-size:1.25rem;margin-top:2px}
+.lhead .st{font-size:.8rem;font-weight:700;color:var(--s1);white-space:nowrap}
+.lesson .prose{margin-top:14px}
+.lesson .quiz{padding:18px 0 0;border-top:1px dashed var(--line);margin-top:18px}
+.ljump{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.ljump a{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-family:var(--mono);font-weight:600}
+.ljump a.done{background:var(--s1);color:#fff;border-color:var(--s1)}
+@media (max-width:560px){.lhead{grid-template-columns:44px minmax(0,1fr)}.lhead .no{width:44px;height:44px}.lhead .st{grid-column:2}}
+</style>
+</head>
+<body>
+<main>
+  <div class="page-hero" style="--c:var(--s1)">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Apprendre</a><span aria-hidden="true">›</span><span>Leçons express</span></nav>
+      <div class="sec-head"><div class="sec-num" style="background:var(--s1)">3'</div><div>
+        <p class="eyebrow">Gratuit · 8 leçons · 2 questions chacune</p>
+        <h1>Huit leçons de trois minutes</h1>
+        <p class="lead">Une notion par leçon, expliquée simplement. Répondez juste aux deux questions pour valider la leçon et gagner 30 XP. Les huit leçons validées débloquent le badge « Toutes les leçons ».</p>
+        <nav class="ljump" id="ljump" aria-label="Aller à une leçon"><a href="#lecon-1" data-n="1" aria-label="Leçon 1">1</a><a href="#lecon-2" data-n="2" aria-label="Leçon 2">2</a><a href="#lecon-3" data-n="3" aria-label="Leçon 3">3</a><a href="#lecon-4" data-n="4" aria-label="Leçon 4">4</a><a href="#lecon-5" data-n="5" aria-label="Leçon 5">5</a><a href="#lecon-6" data-n="6" aria-label="Leçon 6">6</a><a href="#lecon-7" data-n="7" aria-label="Leçon 7">7</a><a href="#lecon-8" data-n="8" aria-label="Leçon 8">8</a></nav>
+      </div></div>
+    </div>
+  </div>
+  <section class="tight">
+    <div class="wrap with-side">
+      <div class="lessons">
+      <article class="card lesson" id="lecon-1" data-n="1">
+        <div class="lhead"><span class="no">1</span><div><p class="eyebrow">Leçon 1 · 3 min</p><h2>C'est quoi, une action ?</h2><p class="muted">Posséder un morceau d'entreprise.</p></div><span class="st"></span></div>
+        <div class="prose"><p>Une action est une part du capital d'une entreprise. Si une entreprise est découpée en un million d'actions et que vous en possédez une, vous en possédez un millionième.</p><p>Son prix, le cours, change à chaque instant selon ce que les acheteurs et les vendeurs sont prêts à payer. Il monte quand on pense que l'entreprise va gagner plus d'argent, il baisse dans le cas contraire.</p><p>Vous gagnez de deux façons : si le cours monte (plus-value) et si l'entreprise reverse une partie de ses bénéfices (dividende). Vous pouvez aussi perdre, jusqu'à la totalité si l'entreprise fait faillite.</p><p class="small">Pour aller plus loin : <a href="../guides/actions.html">Les actions, comment ça marche</a> · Le mot dans le <a href="../glossaire/index.html#action">glossaire</a></p></div>
+        <div class="quiz" data-quiz="1"></div>
+      </article>
+      <article class="card lesson" id="lecon-2" data-n="2">
+        <div class="lhead"><span class="no">2</span><div><p class="eyebrow">Leçon 2 · 3 min</p><h2>Ne pas mettre tous ses œufs dans le même panier</h2><p class="muted">La diversification.</p></div><span class="st"></span></div>
+        <div class="prose"><p>Si tout votre argent est placé dans une seule entreprise, une seule mauvaise nouvelle peut vous faire perdre beaucoup.</p><p>Diversifier, c'est répartir entre plusieurs entreprises, plusieurs secteurs, plusieurs pays et plusieurs types de placements. Les pertes des uns sont souvent compensées par les gains des autres.</p><p>La diversification ne supprime pas le risque, elle le réduit. Quand tout le marché baisse, presque tout baisse ensemble.</p><p class="small">Pour aller plus loin : <a href="../guides/diversifier-investir-regulierement.html">Diversifier et investir régulièrement</a> · Le mot dans le <a href="../glossaire/index.html#diversification">glossaire</a></p></div>
+        <div class="quiz" data-quiz="2"></div>
+      </article>
+      <article class="card lesson" id="lecon-3" data-n="3">
+        <div class="lhead"><span class="no">3</span><div><p class="eyebrow">Leçon 3 · 3 min</p><h2>Les fonds indiciels (ETF)</h2><p class="muted">Des centaines d'entreprises en un seul achat.</p></div><span class="st"></span></div>
+        <div class="prose"><p>Un indice est une liste d'entreprises, par exemple les 600 plus grandes d'Europe. Un fonds indiciel, ou ETF, achète toutes ces entreprises pour vous.</p><p>En achetant une seule part de fonds, vous êtes donc diversifié d'un coup, avec des frais généralement bas.</p><p>C'est la méthode préférée de nombreux investisseurs particuliers : on ne cherche pas à battre le marché, on le suit.</p><p class="small">Pour aller plus loin : <a href="../guides/etf.html">Les ETF, pas à pas</a> · Le mot dans le <a href="../glossaire/index.html#etf">glossaire</a></p></div>
+        <div class="quiz" data-quiz="3"></div>
+      </article>
+      <article class="card lesson" id="lecon-4" data-n="4">
+        <div class="lhead"><span class="no">4</span><div><p class="eyebrow">Leçon 4 · 3 min</p><h2>Les obligations</h2><p class="muted">Prêter plutôt qu'acheter.</p></div><span class="st"></span></div>
+        <div class="prose"><p>Une obligation est un prêt que vous faites à un État ou à une entreprise. En échange, vous recevez des intérêts réguliers, les coupons, puis vous êtes remboursé à la fin.</p><p>Plus l'emprunteur est risqué, plus il doit offrir un coupon élevé pour convaincre les prêteurs.</p><p>Le prix d'une obligation baisse quand les taux d'intérêt montent : les nouvelles obligations rapportent alors plus que les anciennes.</p><p class="small">Pour aller plus loin : <a href="../guides/obligations.html">Les obligations</a> · Le mot dans le <a href="../glossaire/index.html#obligation">glossaire</a></p></div>
+        <div class="quiz" data-quiz="4"></div>
+      </article>
+      <article class="card lesson" id="lecon-5" data-n="5">
+        <div class="lhead"><span class="no">5</span><div><p class="eyebrow">Leçon 5 · 3 min</p><h2>Risque et volatilité</h2><p class="muted">Pourquoi certains cours bougent plus que d'autres.</p></div><span class="st"></span></div>
+        <div class="prose"><p>La volatilité mesure l'ampleur des mouvements d'un cours. Une jeune entreprise peut bouger de 5 % dans la journée, une obligation d'État de 0,1 %.</p><p>En général, plus un placement peut rapporter, plus il peut aussi faire perdre. Le rendement est la récompense du risque.</p><p>Le bon niveau de risque dépend de vous : de votre durée de placement et de votre capacité à ne pas paniquer pendant une baisse.</p><p class="small">Pour aller plus loin : <a href="../guides/cycles-de-marche.html">Comprendre les cycles de marché</a> · Le mot dans le <a href="../glossaire/index.html#volatilite">glossaire</a></p></div>
+        <div class="quiz" data-quiz="5"></div>
+      </article>
+      <article class="card lesson" id="lecon-6" data-n="6">
+        <div class="lhead"><span class="no">6</span><div><p class="eyebrow">Leçon 6 · 3 min</p><h2>Les intérêts composés</h2><p class="muted">L'effet boule de neige.</p></div><span class="st"></span></div>
+        <div class="prose"><p>Quand vos gains sont réinvestis, ils produisent eux-mêmes des gains. 1 000 € à 5 % donnent 1 050 € la première année, puis 1 102,50 € la deuxième, car les 50 € gagnés rapportent aussi.</p><p>Sur des années, cet effet devient énorme. Le facteur le plus puissant n'est pas le montant, c'est la durée.</p><p>Essayez le simulateur d'épargne : comparez 10 ans et 30 ans avec le même versement mensuel.</p><p class="small">Pour aller plus loin : <a href="../outils/epargne.html">Simulateur d'épargne</a> · Le mot dans le <a href="../glossaire/index.html#interets-composes">glossaire</a></p></div>
+        <div class="quiz" data-quiz="6"></div>
+      </article>
+      <article class="card lesson" id="lecon-7" data-n="7">
+        <div class="lhead"><span class="no">7</span><div><p class="eyebrow">Leçon 7 · 3 min</p><h2>L'inflation</h2><p class="muted">Pourquoi l'argent qui dort perd de la valeur.</p></div><span class="st"></span></div>
+        <div class="prose"><p>L'inflation, c'est la hausse générale des prix. Avec 2 % d'inflation, ce qui coûte 100 € aujourd'hui coûtera 102 € dans un an.</p><p>Un billet qui dort sous le matelas garde le même montant, mais permet d'acheter moins de choses : il perd du pouvoir d'achat.</p><p>Investir sert d'abord à faire grandir son épargne au moins aussi vite que les prix.</p><p class="small">Pour aller plus loin : <a href="../outils/inflation.html">Simulateur d'inflation</a> · Le mot dans le <a href="../glossaire/index.html#inflation">glossaire</a></p></div>
+        <div class="quiz" data-quiz="7"></div>
+      </article>
+      <article class="card lesson" id="lecon-8" data-n="8">
+        <div class="lhead"><span class="no">8</span><div><p class="eyebrow">Leçon 8 · 3 min</p><h2>Les pièges du débutant</h2><p class="muted">Les erreurs que tout le monde fait.</p></div><span class="st"></span></div>
+        <div class="prose"><p>Vendre dans la panique quand ça baisse transforme une perte temporaire en perte réelle.</p><p>Acheter ce qui vient de monter très fort parce que tout le monde en parle, c'est souvent acheter trop tard.</p><p>Vérifier son portefeuille dix fois par jour pousse à prendre de mauvaises décisions. Fixez une stratégie, puis laissez le temps faire.</p><p class="small">Pour aller plus loin : <a href="../guides/erreurs-debutant.html">Les erreurs du débutant</a> · Le mot dans le <a href="../glossaire/index.html#biais-comportementaux">glossaire</a></p></div>
+        <div class="quiz" data-quiz="8"></div>
+      </article>
+      </div>
+      <aside class="side-sticky">
+        <div class="card toc"><h2>Votre avancement</h2><p class="num" style="font-size:1.6rem;font-weight:600" id="lCount">0/8</p><div class="progress" aria-hidden="true"><i id="lBar" style="width:0"></i></div><p class="small muted mt-s" id="lLvl"></p><a class="btn ghost mt-s" href="progression.html">Mes badges</a></div>
+        <div class="card toc"><h2>Ensuite</h2><ul><li><a href="index.html">Le guide de démarrage en 8 chapitres</a></li><li><a href="../outils/portefeuille-virtuel.html">S'entraîner avec le portefeuille virtuel</a></li><li><a href="../glossaire/index.html">Le glossaire</a></li></ul></div>
+      </aside>
+    </div>
+  </section>
+</main>
+<script>
+var LESSON_QUIZ = [[{"q": "Que possédez-vous quand vous achetez une action ?", "o": ["Un prêt à l'entreprise", "Une part de l'entreprise", "Un produit de l'entreprise"], "a": 1, "e": "Une action est une part de propriété. Le prêt, c'est l'obligation."}, {"q": "Comment s'appelle la part des bénéfices reversée aux actionnaires ?", "o": ["Le coupon", "Le dividende", "La plus-value"], "a": 1, "e": "Le dividende. Le coupon concerne les obligations."}], [{"q": "Quel portefeuille est le plus diversifié ?", "o": ["100 % dans une seule entreprise", "50 % dans deux entreprises du même secteur", "Un ETF Monde, des obligations et un peu d'or"], "a": 2, "e": "Il mélange des milliers d'entreprises et des placements qui réagissent différemment."}, {"q": "La diversification…", "o": ["supprime tout risque", "réduit le risque", "augmente toujours le gain"], "a": 1, "e": "Elle réduit le risque lié à une entreprise, sans le faire disparaître."}], [{"q": "Que fait un fonds indiciel ?", "o": ["Il choisit les meilleures actions", "Il reproduit un indice", "Il garantit un gain"], "a": 1, "e": "Il suit un indice, sans chercher à choisir les gagnants."}, {"q": "Pourquoi un ETF est-il diversifié ?", "o": ["Il contient beaucoup d'entreprises", "Il ne baisse jamais", "Il est garanti par l'État"], "a": 0, "e": "C'est sa composition qui le rend diversifié. Il peut tout de même baisser."}], [{"q": "Pourquoi une entreprise fragile paie-t-elle un coupon plus élevé qu'un État solide ?", "o": ["Elle est plus risquée", "Elle est plus généreuse", "C'est une erreur"], "a": 0, "e": "Plus de risque de non-remboursement, donc plus de rémunération."}, {"q": "Si les taux montent, le prix des obligations existantes…", "o": ["monte", "baisse", "ne bouge pas"], "a": 1, "e": "Elles deviennent moins attractives que les nouvelles, donc leur prix baisse."}], [{"q": "Quel placement est généralement le plus volatil ?", "o": ["Une obligation d'État", "Un ETF Monde", "L'action d'une jeune entreprise de croissance"], "a": 2, "e": "Une jeune entreprise bouge beaucoup plus qu'un fonds diversifié ou une obligation."}, {"q": "Un rendement espéré plus élevé va généralement avec…", "o": ["moins de risque", "plus de risque", "aucun lien"], "a": 1, "e": "C'est le principe de base : pas de rendement sans risque."}], [{"q": "1 000 € à 10 % par an, réinvestis, donnent après 2 ans :", "o": ["1 200 €", "1 210 €", "1 100 €"], "a": 1, "e": "1 000 × 1,1 × 1,1 = 1 210 €. Les 100 € de la première année rapportent 10 € de plus."}, {"q": "Le facteur qui renforce le plus l'effet boule de neige :", "o": ["La durée", "Vendre souvent", "Changer de placement chaque mois"], "a": 0, "e": "Plus vous laissez le temps travailler, plus l'effet est fort."}], [{"q": "Avec 3 % d'inflation, 100 € sur un compte à 0 % valent dans un an…", "o": ["plus", "autant en pouvoir d'achat", "moins en pouvoir d'achat"], "a": 2, "e": "Le montant est le même, mais les prix ont monté : vous pouvez acheter moins."}, {"q": "L'inflation, c'est…", "o": ["la hausse des prix", "la hausse de la bourse", "la baisse des taux"], "a": 0, "e": "C'est la hausse générale des prix des biens et services."}], [{"q": "Votre portefeuille baisse de 15 % en une semaine. Le réflexe le plus réfléchi :", "o": ["Tout vendre", "Vérifier si votre stratégie a changé", "Tout miser sur l'action qui monte"], "a": 1, "e": "Si vos raisons d'investir n'ont pas changé, une baisse n'est pas une raison de vendre."}, {"q": "Une perte devient définitive quand…", "o": ["le cours baisse", "vous vendez en dessous de votre prix d'achat", "l'entreprise publie ses résultats"], "a": 1, "e": "Tant que vous n'avez pas vendu, la perte n'est pas réalisée."}]];
+document.addEventListener("socle:ready", function () {
+  function draw() {
+    var p = Socle.progress.get();
+    [].forEach.call(document.querySelectorAll(".lesson"), function (a) { var ok = p.lessons.indexOf(+a.dataset.n) > -1; a.classList.toggle("done", ok); a.querySelector(".st").textContent = ok ? "✓ Validée" : ""; });
+    [].forEach.call(document.querySelectorAll("#ljump a"), function (a) { a.classList.toggle("done", p.lessons.indexOf(+a.dataset.n) > -1); });
+    document.getElementById("lCount").textContent = p.lessons.length + "/8";
+    document.getElementById("lBar").style.width = (p.lessons.length / 8 * 100) + "%";
+    var l = Socle.progress.level(p.xp); document.getElementById("lLvl").textContent = "Niveau " + l.name + " · " + p.xp + " XP";
+  }
+  [].forEach.call(document.querySelectorAll("[data-quiz]"), function (el) {
+    var n = +el.dataset.quiz;
+    SocleLearn.quiz(el, LESSON_QUIZ[n - 1], { title: "Quiz de la leçon {n}".replace("{n}", n), passText: "leçon validée, +30 XP.", onPass: function (first) { Socle.progress.lesson(n); if (first) Socle.progress.unlock("perfect"); } });
+  });
+  draw(); document.addEventListener("socle:progress", draw);
+});
+</script>
+</body>
+</html>

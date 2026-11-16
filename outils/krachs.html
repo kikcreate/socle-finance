@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Historique des krachs boursiers · Socle</title>
+<meta name="description" content="Dix grands krachs depuis 1929 : ampleur de la baisse, durée, temps de retour au sommet et effet de continuer à investir.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/krachs.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="krachs">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Historique des krachs</span></nav>
+    <p class="eyebrow">Comprendre · S'entraîner</p>
+    <h1>Historique des krachs</h1>
+    <p class="lead">De 1929 à 2022, chaque krach a semblé être la fin du monde. Voyez combien il a fallu de temps pour s'en remettre, et ce qu'aurait donné le fait de continuer à investir chaque mois.</p>
+    <p class="mt-s"><span class="tag free">Gratuit</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card sim"><div class="sim-body"><div><p class="res-lbl">Choisissez un épisode</p><div class="crash-list mt-s" id="list"></div><form id="f" class="mt-m" novalidate><div class="field"><label for="somme">Somme investie au sommet</label><input type="number" id="somme" name="somme" value="10000" min="0" step="500" inputmode="decimal"></div><div class="field"><label for="mens">Et chaque mois ensuite</label><input type="number" id="mens" name="mens" value="200" min="0" step="50" inputmode="decimal"></div><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form></div><div class="sim-out" aria-live="polite"><p class="res-lbl">Épisode</p><p class="res-big t" id="rNom">—</p><div class="res-row" id="rRow"></div><p class="muted mt-m" id="story"></p><div class="chart" id="chart"></div><ul class="mt-m" id="insights" style="list-style:disc;padding-left:1.2em;color:var(--muted)"></ul></div></div></div><div class="card mt-m" style="padding:18px"><h2 style="font-size:1.1rem">Tous les épisodes</h2><div id="tab" class="mt-s"></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Dates arrondies au mois, à partir des clôtures mensuelles des indices. Indices de prix, hors dividendes : avec les dividendes réinvestis, le retour au sommet a toujours été plus rapide (de plusieurs années pour le CAC 40).</li><li>Les trajectoires du graphique sont simplifiées : baisse régulière jusqu'au creux, remontée régulière jusqu'au retour, puis 7 % par an. Dans la réalité, il y a eu des rebonds et des rechutes.</li><li>Les montants sont nominaux, sans tenir compte de l'inflation.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Hausse nécessaire pour revenir = 1 / (1 − baisse) − 1</p><p>Une baisse de 50 % demande une hausse de 100 % pour revenir au point de départ ; une baisse de 89 %, comme en 1929, une hausse de plus de 800 %. C'est pour cela que la diversification et l'horizon long comptent autant.</p></div></div><div class="card related" data-guides="cycles,actions,etf" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="dca.html">Investissement programmé</a><a href="portefeuille-virtuel.html">Portefeuille virtuel</a><a href="epargne.html">Épargne et intérêts composés</a><a href="frais.html">Impact des frais</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

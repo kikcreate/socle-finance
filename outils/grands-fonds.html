@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Positions des grands fonds · Socle</title>
+<meta name="description" content="Apprenez à lire les positions trimestrielles déclarées par les grands gérants : poids, entrées, sorties, renforcements, concentration.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/grands-fonds.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="grands-fonds">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Positions des grands fonds</span></nav>
+    <p class="eyebrow">Outil de l'investisseur</p>
+    <h1>Positions des grands fonds</h1>
+    <p class="lead">Ce que détiennent les grands gérants d'après leurs déclarations trimestrielles, avec les entrées et les sorties. Explorez trois fonds fictifs, puis comparez deux listes réelles que vous collez.</p>
+    <p class="mt-s"><span class="tag sub">Outil de l'investisseur</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="tabs" role="tablist" id="fTabs" aria-label="Fonds"></div><div class="card mt-s" style="padding:22px"><p class="res-lbl">Fonds</p><p class="res-big t" id="fNom">—</p><p class="res-sub" id="fStyle"></p><div class="kpis mt-m" id="kpis"></div><p class="verdict" id="fRead"></p><div class="grid2 mt-m"><div><h3>Lignes au 3e trimestre 2026</h3><div class="mt-s" id="pos"></div></div><div><h3>Par secteur</h3><div class="mt-s" id="sect"></div><h3 class="mt-l">Valeurs détenues par plusieurs fonds</h3><ul class="mt-s" id="common" style="list-style:disc;padding-left:1.2em;color:var(--muted)"></ul></div></div></div><div class="card mt-m" style="padding:22px"><h2 style="font-size:1.1rem">Comparer deux listes</h2><p class="muted small">Collez une ligne par position, sous la forme « nom ; valeur » (copiée d'un tableur, d'une déclaration ou de votre propre portefeuille à deux dates).</p><div class="grid2 mt-s"><div class="field"><label for="qa">Trimestre précédent</label><textarea id="qa" rows="7" style="padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg)">Orbis Logiciels;4200
+Valmont Paiements;2900
+Ostra Médias;950</textarea></div><div class="field"><label for="qb">Dernier trimestre</label><textarea id="qb" rows="7" style="padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg)">Orbis Logiciels;4650
+Valmont Paiements;3120
+Lumio Semi-conducteurs;820</textarea></div></div><div id="cmpOut"></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Les fonds et sociétés présentés sont fictifs.</li><li>Aux États-Unis, les gérants de plus de 100 millions de dollars en actions américaines publient leurs positions chaque trimestre (formulaire 13F de la SEC), jusqu'à 45 jours après la fin du trimestre. En France, l'AMF publie les déclarations de franchissement de seuil (5 %, 10 %…).</li><li>Ces déclarations arrivent avec plusieurs semaines de retard, ne montrent ni les ventes à découvert ni les autres classes d'actifs : copier un fonds, c'est acheter après lui sans connaître ses raisons.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Poids = valeur de la ligne / valeur totale déclarée<br>Concentration = poids cumulé des 5 premières lignes</p><p>Pour savoir si un gérant a acheté, regardez la variation du nombre de titres, pas celle de la valeur : une ligne peut grossir simplement parce que son cours a monté.</p></div></div><div class="card related" data-guides="actions,etf,lire-un-bilan" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="analyse-entreprise.html">Analyse d&#x27;entreprise</a><a href="alertes.html">Listes et alertes</a><a href="portefeuille.html">Suivi de portefeuille</a><a href="comparateur-etf.html">Comparateur d&#x27;ETF</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

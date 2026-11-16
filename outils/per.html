@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Simulateur PER · Socle</title>
+<meta name="description" content="Estimez l&#x27;économie d&#x27;impôt d&#x27;un versement sur un plan d&#x27;épargne retraite, votre plafond de déduction et la fiscalité à la sortie en capital.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/per.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="per">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Simulateur PER</span></nav>
+    <p class="eyebrow">Simulateur · Impôts et enveloppes</p>
+    <h1>Simulateur PER</h1>
+    <p class="lead">Combien un versement sur un PER vous fait économiser d'impôt cette année, combien il vous coûte vraiment, et ce qu'il restera après impôts à la retraite.</p>
+    <p class="mt-s"><span class="tag free">Gratuit</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card sim"><div class="sim-body"><form id="f" novalidate><div class="field"><label for="rev">Revenu net imposable du foyer</label><input type="number" id="rev" name="rev" value="52000" min="0" step="500" inputmode="decimal"></div><div class="field-row"><div class="field"><label for="parts">Parts fiscales</label><input type="number" id="parts" name="parts" value="1" min="1" max="10" step="0.5" inputmode="decimal"></div><fieldset class="fieldset"><legend>Situation</legend><div class="seg"><label><input type="radio" name="sit" value="seul" checked><span>Seul</span></label><label><input type="radio" name="sit" value="couple"><span>Couple</span></label></div></fieldset></div><div class="field"><label for="versement">Versement sur le PER cette année</label><input type="number" id="versement" name="versement" value="4000" min="0" step="100" inputmode="decimal"></div><div class="field"><label for="pro">Revenus d'activité 2025 du titulaire</label><input type="number" id="pro" name="pro" value="52000" min="0" step="500" inputmode="decimal"><span class="hint">Sert au calcul du plafond : 10 % de ces revenus, au moins 4 710 € et au plus 37 680 €.</span></div><div class="field"><label for="report">Plafond non utilisé des 3 années précédentes</label><input type="number" id="report" name="report" value="0" min="0" step="100" inputmode="decimal"><span class="hint">Indiqué sur votre avis d'impôt, rubrique « plafond épargne retraite ».</span></div><h3 style="margin:22px 0 12px">Jusqu'à la retraite</h3><div class="field"><label for="ans">Années avant la retraite<output for="ans" data-fmt="ans"></output></label><input type="range" id="ans" name="ans" value="20" min="1" max="45" step="1" inputmode="decimal"></div><div class="field"><label for="rdt">Rendement annuel supposé<output for="rdt" data-fmt="pct"></output></label><input type="range" id="rdt" name="rdt" value="5" min="0" max="10" step="0.1" inputmode="decimal"></div><div class="field"><label for="tmiR">TMI à la retraite</label><select id="tmiR" name="tmiR"><option value="0">0 %</option><option value="11" selected>11 %</option><option value="30">30 %</option><option value="41">41 %</option></select></div><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form><div class="sim-out" aria-live="polite"><p class="res-lbl">Impôt économisé cette année</p><p class="res-big up" id="rEco">—</p><div class="res-row" id="rRow"></div><p class="verdict" id="verdict"></p><div class="chart" id="chart"></div><div class="out-card mt-m"><p class="res-lbl">À la sortie, en capital</p><div id="sortie"></div></div></div></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Économie calculée en comparant votre impôt avec et sans la déduction, barème 2026.</li><li>Plafond salarié : 10 % des revenus d'activité de l'année précédente, minimum 10 % du plafond de la Sécurité sociale 2025 (4 710 €), maximum 10 % de 8 fois ce plafond (37 680 €), plus les plafonds non utilisés des trois années précédentes. Les indépendants ont un plafond spécifique, plus élevé.</li><li>Sortie en capital en une fois, revenus constants, versement identique chaque année. La part versements est imposée au barème (approchée par la TMI à la retraite), la part gains au prélèvement forfaitaire de 31,4 %.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Économie = impôt(revenu) − impôt(revenu − versement déductible)<br>Effort réel = versement − économie</p><p>Le PER est intéressant quand votre TMI aujourd'hui est plus élevée que celle attendue à la retraite : vous déduisez à 30 ou 41 % et vous êtes imposé plus tard à 11 ou 0 %.</p></div></div><div class="card related" data-guides="preparer-sa-retraite,per,declarer" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="impot.html">Impôt sur le revenu et TMI</a><a href="enveloppes.html">Comparer les enveloppes</a><a href="independance.html">Indépendance financière</a><a href="epargne.html">Épargne et intérêts composés</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

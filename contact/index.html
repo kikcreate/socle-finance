@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Contact · Socle</title>
+<meta name="description" content="Écrire à la rédaction de Socle : question sur un guide, erreur repérée, idée, données personnelles.">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js"></script>
+
+</head>
+<body>
+<main>
+  <div class="page-hero" style="--c:var(--s2)">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><span>Contact</span></nav>
+      <p class="eyebrow">Nous écrire</p>
+      <h1>Une question ? Écrivez-nous.</h1>
+      <p class="lead">Choisissez un sujet et écrivez votre message. Nous le mettons en forme : vous n'avez plus qu'à l'envoyer depuis votre messagerie. Réponse sous 48 h ouvrées.</p>
+    </div>
+  </div>
+  <section class="tight">
+    <div class="wrap with-side">
+      <form class="form card" id="cForm" style="padding:26px" novalidate>
+        <div class="row">
+          <label>Votre prénom<input name="name" autocomplete="given-name" placeholder="Camille"></label>
+          <label>Sujet<select name="topic">
+            <option>Question sur un guide ou un chapitre</option>
+            <option>Erreur repérée dans un contenu</option>
+            <option>Question sur un simulateur ou le portefeuille virtuel</option>
+            <option>Abonnement, compte ou facturation</option>
+            <option>Proposer un mot pour le glossaire</option>
+            <option>Idée d'amélioration</option>
+            <option>Supprimer mes données</option>
+            <option>Presse ou partenariat</option>
+            <option>Autre</option>
+          </select></label>
+        </div>
+        <label>Page concernée (facultatif)<input name="page" placeholder="Ex. : guide PEA, chapitre 4…"></label>
+        <label>Votre message<textarea name="msg" required placeholder="Bonjour, je voulais savoir…"></textarea></label>
+        <p class="small muted">Nous ne répondons pas aux demandes de conseil personnalisé (« que dois-je acheter ? ») : Socle n'est pas habilité à en donner.</p>
+        <div class="callout" id="cPrev" hidden><b>Aperçu de votre e-mail</b><pre id="cPreTxt" style="white-space:pre-wrap;font:inherit;margin:6px 0 0"></pre></div>
+        <p class="err" id="cErr" role="alert"></p>
+        <div class="btns" style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" type="submit">Préparer mon e-mail</button><a class="btn ghost" id="cMail" href="#" hidden>Ouvrir ma messagerie</a><button class="btn ghost" type="button" id="cCopy" hidden>Copier le message</button></div>
+        <p class="small muted" id="cStatus" role="status"></p>
+      </form>
+      <aside class="side-sticky">
+        <div class="card toc"><h2>Nous joindre</h2><p class="small">E-mail : <span class="num">bonjour@socle.example</span></p><p class="small muted mt-s">Adresse de démonstration, aucun message n'est réellement reçu.</p></div>
+        <div class="card toc"><h2>Avant d'écrire</h2><ul><li><a href="../faq/index.html">Questions fréquentes</a></li><li><a href="../glossaire/index.html">Glossaire</a></li><li><a href="../formules/compte.html#abonnement">Gérer mon abonnement</a></li><li><a href="../legal/confidentialite.html">Mes données personnelles</a></li></ul></div>
+      </aside>
+    </div>
+  </section>
+</main>
+<script>
+document.addEventListener("socle:ready", function () {
+  var f = document.getElementById("cForm"), EMAIL = "bonjour@socle.example", txt = "";
+  var a = Socle.account.get(); if (a && a.name) f.name.value = a.name;
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (f.msg.value.trim().length < 10) { document.getElementById("cErr").textContent = "Votre message est un peu court : précisez votre question."; return; }
+    document.getElementById("cErr").textContent = "";
+    var subj = "[Socle] " + f.topic.value;
+    txt = "À : " + EMAIL + "\nObjet : " + subj + "\n\n" + f.msg.value.trim() + (f.page.value ? "\n\nPage concernée : " + f.page.value : "") + "\n\n" + (f.name.value || "");
+    document.getElementById("cPreTxt").textContent = txt; document.getElementById("cPrev").hidden = false;
+    var m = document.getElementById("cMail"); m.hidden = false;
+    m.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(f.msg.value.trim() + (f.page.value ? "\n\nPage concernée : " + f.page.value : "") + "\n\n" + (f.name.value || ""));
+    document.getElementById("cCopy").hidden = false;
+    document.getElementById("cStatus").textContent = "Votre e-mail est prêt. Ouvrez votre messagerie ou copiez le texte.";
+  });
+  document.getElementById("cCopy").addEventListener("click", function () {
+    var done = function () { document.getElementById("cStatus").textContent = "Message copié dans le presse-papiers."; };
+    if (navigator.clipboard) navigator.clipboard.writeText(txt).then(done, function () { document.getElementById("cStatus").textContent = "Copie impossible : sélectionnez le texte de l'aperçu."; });
+  });
+});
+</script>
+</body>
+</html>

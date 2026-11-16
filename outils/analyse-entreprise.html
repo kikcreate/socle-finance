@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Analyse d&#x27;entreprise · Socle</title>
+<meta name="description" content="Analysez dix ans de chiffres d&#x27;une entreprise : croissance, marges, dette, dividende, ratios de valorisation et estimation par les flux de trésorerie.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/analyse-entreprise.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="analyse-entreprise">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Analyse d&#x27;entreprise</span></nav>
+    <p class="eyebrow">Outil de l'investisseur</p>
+    <h1>Analyse d'entreprise</h1>
+    <p class="lead">Chiffre d'affaires, marges, dette et dividendes sur dix ans, expliqués en une phrase sous chaque graphique, puis les ratios qui comptent et une estimation de valeur.</p>
+    <p class="mt-s"><span class="tag sub">Outil de l'investisseur</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="toolbar" id="presets" role="group" aria-label="Entreprise"><span class="res-lbl">Exemples fictifs</span><div class="vp-speed"><button type="button" data-p="ventor" aria-pressed="true">Ventor Énergie</button><button type="button" data-p="halde" aria-pressed="false">Halde Industrie</button><button type="button" data-p="lumen" aria-pressed="false">Café Lumen</button><button type="button" data-p="mine" aria-pressed="false">Mes chiffres</button></div></div><div class="card" style="padding:22px"><p class="res-lbl">Entreprise analysée</p><p class="res-big t" id="rNom">—</p><p class="res-sub" id="rSect"></p><div class="grid3 mt-m"><div class="field"><label for="nomE">Nom</label><input type="text" id="nomE"></div><div class="field"><label for="cours">Cours de l'action (€)</label><input type="number" id="cours" step="any" inputmode="decimal"></div><div class="field"><label for="actions">Nombre d'actions (millions)</label><input type="number" id="actions" step="any" inputmode="decimal"></div></div></div><div class="grid2 mt-m"><div class="card" style="padding:18px"><h3>Croissance</h3><div class="chart" id="cCa"></div><p class="muted small mt-s" id="sCa"></p></div><div class="card" style="padding:18px"><h3>Rentabilité</h3><div class="chart" id="cMarg"></div><p class="muted small mt-s" id="sMarg"></p></div><div class="card" style="padding:18px"><h3>Endettement</h3><div class="chart" id="cDette"></div><p class="muted small mt-s" id="sDette"></p></div><div class="card" style="padding:18px"><h3>Dividende</h3><div class="chart" id="cDiv"></div><p class="muted small mt-s" id="sDiv"></p></div></div><div class="card mt-m" style="padding:18px"><h2 style="font-size:1.1rem">Les ratios clés</h2><div id="ratios" class="mt-s"></div></div><div class="card mt-m" style="padding:22px"><h2 style="font-size:1.1rem">Estimation de valeur par les flux de trésorerie</h2><p class="muted small">On projette le flux de trésorerie disponible (moyenne des 3 dernières années) sur 10 ans, puis on actualise. Très sensible aux hypothèses : changez-les pour voir.</p><div class="grid3 mt-m"><div class="field"><label for="g">Croissance des flux sur 10 ans (%/an)</label><input type="number" id="g" value="4" step="0.5" inputmode="decimal"></div><div class="field"><label for="r">Rendement exigé (%/an)</label><input type="number" id="r" value="8" step="0.5" inputmode="decimal"></div><div class="field"><label for="gt">Croissance à l'infini (%/an)</label><input type="number" id="gt" value="2" step="0.5" inputmode="decimal"></div></div><p class="res-lbl">Valeur estimée par action</p><p class="res-big" id="vBig">—</p><div class="res-row" id="vRow"></div></div><details class="card mt-m" style="padding:18px"><summary style="cursor:pointer;font-weight:700">Voir et modifier les chiffres (en millions d'euros)</summary><p class="hint mt-s">Les chiffres de « Mes chiffres » sont gardés dans ce navigateur. Vous les trouverez dans le rapport annuel de l'entreprise (document d'enregistrement universel), rubriques compte de résultat, bilan et tableau des flux.</p><div id="data" class="mt-s"></div></details><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Les trois sociétés proposées sont fictives, leurs chiffres inventés pour illustrer trois profils : croissance endettée, industriel en difficulté, valeur stable.</li><li>Le levier est mesuré par la dette nette divisée par le résultat opérationnel, faute d'EBITDA dans le tableau : c'est plus sévère que le ratio habituel.</li><li>Les repères sont des ordres de grandeur généraux. Une banque, une foncière ou une société de logiciels se lisent avec d'autres repères.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Valeur = Σ FCF × (1 + g)ᵗ / (1 + r)ᵗ + valeur terminale − dette nette<br>Valeur terminale = FCF₁₀ × (1 + g∞) / (r − g∞), actualisée</p><p>PER = cours / bénéfice par action. Taux de distribution = dividendes versés / résultat net. ROE = résultat net / capitaux propres.</p></div></div><div class="card related" data-guides="lire-un-bilan,actions,dividendes" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="dividendes.html">Rendement des dividendes</a><a href="alertes.html">Listes et alertes</a><a href="grands-fonds.html">Positions des grands fonds</a><a href="portefeuille-virtuel.html">Portefeuille virtuel</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

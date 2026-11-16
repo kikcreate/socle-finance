@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Budget 50/30/20 et épargne de précaution · Socle</title>
+<meta name="description" content="Répartissez votre revenu entre besoins, envies et épargne, et calculez le montant de votre épargne de précaution.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/budget.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="budget">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Budget 50/30/20</span></nav>
+    <p class="eyebrow">Simulateur · Bien démarrer</p>
+    <h1>Budget 50/30/20</h1>
+    <p class="lead">50 % pour les besoins, 30 % pour les envies, 20 % pour l'épargne. Un point de départ, à ajuster à votre situation, puis le coussin de sécurité à constituer avant d'investir.</p>
+    <p class="mt-s"><span class="tag free">Gratuit</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card sim"><div class="sim-body"><form id="f" novalidate><div class="field"><label for="rev">Revenu net mensuel</label><input type="number" id="rev" name="rev" value="2200" min="0" step="50" inputmode="decimal"><span class="hint">Après impôt à la source, primes lissées sur 12 mois.</span></div><div class="field"><label for="loyer">Loyer ou crédit immobilier</label><input type="number" id="loyer" name="loyer" value="750" min="0" step="10" inputmode="decimal"></div><div class="field"><label for="fixes">Autres dépenses essentielles</label><input type="number" id="fixes" name="fixes" value="450" min="0" step="10" inputmode="decimal"><span class="hint">Courses, énergie, transport, assurances, téléphone.</span></div><div class="field"><label for="envies">Dépenses d'envies</label><input type="number" id="envies" name="envies" value="500" min="0" step="10" inputmode="decimal"><span class="hint">Sorties, vacances, abonnements, shopping.</span></div><h3 style="margin:22px 0 12px">Épargne de précaution</h3><div class="field"><label for="mois">Mois de dépenses à couvrir<output for="mois" data-suf=" mois"></output></label><input type="range" id="mois" name="mois" value="4" min="1" max="12" step="1" inputmode="decimal"></div><div class="field"><label for="dejaP">Déjà de côté sur un livret</label><input type="number" id="dejaP" name="dejaP" value="1500" min="0" step="100" inputmode="decimal"></div><label class="chk"><input type="checkbox" name="inclEnvies"><span>Inclure les envies dans le calcul</span></label><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form><div class="sim-out" aria-live="polite"><p class="res-lbl">Objectif d'épargne (20 %)</p><p class="res-big" id="rS">—</p><div class="res-row" id="rRow"></div><div class="split" id="split" aria-hidden="true"></div><p class="verdict" id="verdict"></p><div class="chart" id="chart"></div><div class="out-card mt-m"><p class="res-lbl">Épargne de précaution à viser</p><p class="res-big" id="pCible" style="font-size:1.8rem">—</p><div class="res-row" id="pRow"></div></div></div></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Les besoins regroupent ce que vous ne pouvez pas supprimer d'un mois sur l'autre.</li><li>Quand le loyer dépasse le tiers du revenu, une répartition 60/20/20 ou 70/10/20 est plus réaliste : l'important est de garder un effort d'épargne régulier.</li><li>L'épargne de précaution se place sans risque et reste disponible : Livret A (1,7 %, plafond 22 950 €), LDDS (plafond 12 000 €), LEP si vous y avez droit (2,5 %).</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Besoins cible = revenu × 50 %<br>Envies cible = revenu × 30 %<br>Épargne possible = revenu − besoins − envies</p><p>Épargne de précaution = dépenses mensuelles × nombre de mois. Trois mois pour un salarié en CDI, six mois ou plus pour un indépendant ou un foyer à un seul revenu.</p></div></div><div class="card related" data-guides="epargne-de-precaution,budget,livret,demarrer" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="epargne.html">Épargne et intérêts composés</a><a href="objectif.html">Objectif financier</a><a href="inflation.html">Inflation et pouvoir d&#x27;achat</a><a href="credit.html">Crédit immobilier</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

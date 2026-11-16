@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Suivi de portefeuille · Socle</title>
+<meta name="description" content="Regroupez PEA, assurance-vie, compte-titres et livrets, et voyez la répartition réelle par compte, type d&#x27;actif, zone et secteur, ainsi que vos frais moyens.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/portefeuille.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="portefeuille">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Suivi de portefeuille</span></nav>
+    <p class="eyebrow">Outil de l'investisseur</p>
+    <h1>Suivi de portefeuille</h1>
+    <p class="lead">Regroupez tous vos comptes et voyez enfin la répartition réelle de votre patrimoine par compte, type d'actif, zone géographique et secteur, avec vos frais moyens.</p>
+    <p class="mt-s"><span class="tag sub">Outil de l'investisseur</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<p class="demo-note">Vos données restent dans ce navigateur : rien n'est envoyé. Exportez-les pour les garder ou les changer d'appareil.</p><div class="card mt-s" style="padding:18px"><div class="toolbar"><button class="btn small" type="button" id="add">Ajouter une ligne</button><button class="btn ghost small" type="button" id="demo">Charger l'exemple</button><span class="sp"></span><button class="btn ghost small" type="button" id="csv">Exporter en CSV</button><button class="btn ghost small" type="button" id="json">Sauvegarder (JSON)</button><label class="btn ghost small" style="cursor:pointer">Importer<input type="file" id="imp" accept="application/json,.json" hidden></label><button class="btn ghost small" type="button" id="clear">Tout effacer</button></div><div class="tbl"><table class="edit-tbl" style="min-width:1050px"><thead><tr><th>Ligne</th><th>Compte</th><th>Type</th><th>Zone</th><th>Secteur</th><th class="r">Quantité</th><th class="r">Prix de revient</th><th class="r">Cours</th><th class="r">Frais / an %</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></div><div class="kpis mt-m" id="kpis"></div><div class="grid3 mt-m"><div class="card" style="padding:18px"><h3>Par compte</h3><div class="mt-s" id="dCompte"></div></div><div class="card" style="padding:18px"><h3>Par type d'actif</h3><div class="mt-s" id="dType"></div></div><div class="card" style="padding:18px"><h3>Par zone</h3><div class="mt-s" id="dZone"></div></div></div><div class="grid2 mt-m"><div class="card" style="padding:18px"><h3>Par secteur</h3><div class="mt-s" id="dSect"></div></div><div class="card" style="padding:18px"><h3>Points d'attention</h3><ul class="mt-s" id="alerts" style="list-style:disc;padding-left:1.2em;color:var(--muted)"></ul></div></div><div class="card mt-m" style="padding:18px"><h3>Détail par ligne</h3><div class="mt-s" id="detail"></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Saisissez le cours manuellement : l'outil ne se connecte à aucun courtier ni flux de cotation.</li><li>Pour un fonds euros, un livret ou une SCPI, mettez une quantité de 1 et la valeur totale comme cours.</li><li>Un ETF Monde est classé « Monde » ; en réalité, il est investi à environ 70 % aux États-Unis. Pensez-y en lisant la répartition par zone.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Valeur = quantité × cours<br>Plus-value latente = valeur − quantité × prix de revient<br>Frais moyens = Σ (valeur × frais) / valeur totale</p><p>Le prix de revient unitaire (PRU) est le prix moyen auquel vous avez acheté, frais d'achat compris.</p></div></div><div class="card related" data-guides="etf,pea,assurance-vie,compte-titres" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="calendrier-dividendes.html">Calendrier des dividendes</a><a href="frais.html">Impact des frais</a><a href="alertes.html">Listes et alertes</a><a href="analyse-entreprise.html">Analyse d&#x27;entreprise</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

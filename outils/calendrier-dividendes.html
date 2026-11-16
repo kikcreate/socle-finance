@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calendrier des dividendes · Socle</title>
+<meta name="description" content="Visualisez mois par mois les dividendes attendus de vos actions et ETF, bruts et nets selon l&#x27;enveloppe.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/calendrier-dividendes.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="calendrier-dividendes">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Calendrier des dividendes</span></nav>
+    <p class="eyebrow">Outil de l'investisseur</p>
+    <h1>Calendrier des dividendes</h1>
+    <p class="lead">Indiquez vos lignes, le dividende par titre et le rythme de versement : voyez vos revenus mois par mois, nets des prélèvements selon l'enveloppe.</p>
+    <p class="mt-s"><span class="tag sub">Outil de l'investisseur</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<p class="demo-note">Données gardées dans ce navigateur. Les dates sont celles que vous saisissez : vérifiez-les dans l'agenda financier de chaque société.</p><div class="card mt-s" style="padding:18px"><div class="toolbar"><button class="btn small" type="button" id="add">Ajouter une ligne</button><button class="btn ghost small" type="button" id="demo">Charger l'exemple</button><button class="btn ghost small" type="button" id="fromPf">Reprendre mon suivi de portefeuille</button></div><div class="tbl"><table class="edit-tbl" style="min-width:880px"><thead><tr><th>Valeur</th><th class="r">Titres</th><th class="r">Dividende annuel / titre (€)</th><th>Rythme</th><th>Premier mois</th><th>Enveloppe</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></div><div class="kpis mt-m" id="kpis"></div><div class="card mt-m" style="padding:18px"><h3>Mois par mois</h3><div class="chart" id="chart"></div><div class="cal mt-m" id="cal"></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Montant de chaque versement = dividende annuel par titre × nombre de titres / nombre de versements par an.</li><li>Compte-titres : prélèvement forfaitaire de 31,4 % retenu à la source (2026). PEA et assurance-vie : rien n'est prélevé au versement.</li><li>Les retenues à la source étrangères ne sont pas prises en compte.</li></ul></div><div class="card"><h2>La formule</h2><p>Le mois de versement est le mois de paiement, pas celui du détachement. Pour toucher un dividende, il faut détenir le titre la veille de la date de détachement.</p></div></div><div class="card related" data-guides="dividendes,actions,compte-titres" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="dividendes.html">Rendement des dividendes</a><a href="portefeuille.html">Suivi de portefeuille</a><a href="independance.html">Indépendance financière</a><a href="analyse-entreprise.html">Analyse d&#x27;entreprise</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Impact des frais sur votre épargne · Socle</title>
+<meta name="description" content="Mesurez ce que coûtent des frais annuels de 0,2 % à 3 % sur un placement à long terme.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/frais.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="frais">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Impact des frais</span></nav>
+    <p class="eyebrow">Simulateur · Investir en bourse</p>
+    <h1>Impact des frais</h1>
+    <p class="lead">Un écart de frais qui paraît minuscule chaque année devient énorme sur 20 ou 30 ans. Comparez deux placements identiques qui ne diffèrent que par leurs frais.</p>
+    <p class="mt-s"><span class="tag free">Gratuit</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card sim"><div class="sim-body"><form id="f" novalidate><div class="field"><label for="init">Versement de départ</label><input type="number" id="init" name="init" value="10000" min="0" step="500" inputmode="decimal"></div><div class="field"><label for="mens">Versement mensuel</label><input type="number" id="mens" name="mens" value="200" min="0" step="10" inputmode="decimal"></div><div class="field"><label for="ans">Durée<output for="ans" data-fmt="ans"></output></label><input type="range" id="ans" name="ans" value="25" min="1" max="40" step="1" inputmode="decimal"></div><div class="field"><label for="rdt">Rendement brut annuel<output for="rdt" data-fmt="pct"></output></label><input type="range" id="rdt" name="rdt" value="6" min="0" max="12" step="0.1" inputmode="decimal"></div><div class="field-row"><div class="field"><label for="fA">Frais annuels A</label><input type="number" id="fA" name="fA" value="1.8" min="0" max="4" step="0.05" inputmode="decimal"></div><div class="field"><label for="fB">Frais annuels B</label><input type="number" id="fB" name="fB" value="0.25" min="0" max="4" step="0.05" inputmode="decimal"></div></div><div class="field"><label for="entree">Frais d'entrée sur A</label><input type="number" id="entree" name="entree" value="0" min="0" max="5" step="0.5" inputmode="decimal"><span class="hint">En % de chaque versement.</span></div><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form><div class="sim-out" aria-live="polite"><p class="res-lbl">Ce que les frais de A vous coûtent en plus</p><p class="res-big down" id="rDiff">—</p><div class="res-row" id="rRow"></div><div class="chart" id="chart"></div><div id="tab" class="mt-m"></div></div></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Les frais annuels sont retirés du rendement chaque année (frais de gestion du contrat, frais courants des fonds).</li><li>Exemples d'ordres de grandeur : un ETF indiciel coûte souvent 0,1 à 0,4 % par an ; un fonds actif 1,5 à 2,2 % ; une assurance-vie en ligne prend 0,5 à 0,85 % sur les unités de compte, en plus des frais des fonds.</li><li>Rendement brut constant : en réalité, un fonds plus cher ne rapporte pas plus en moyenne.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Capital = C₀ × (1 + r − f)ⁿ + versements capitalisés au même taux</p><p>Le coût total des frais est la différence entre le capital sans frais et le capital avec frais. Il grossit avec le temps parce que les frais prélevés ne produisent plus d'intérêts.</p></div></div><div class="card related" data-guides="etf,assurance-vie,compte-titres" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="comparateur-etf.html">Comparateur d&#x27;ETF</a><a href="frais-courtage.html">Frais de courtage</a><a href="enveloppes.html">Comparer les enveloppes</a><a href="epargne.html">Épargne et intérêts composés</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

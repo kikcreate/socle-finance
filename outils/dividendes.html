@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rendement des dividendes · Socle</title>
+<meta name="description" content="Calculez le rendement d&#x27;un dividende, votre revenu net selon l&#x27;enveloppe et l&#x27;effet du réinvestissement sur 10 à 30 ans.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/dividendes.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="dividendes">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Rendement des dividendes</span></nav>
+    <p class="eyebrow">Simulateur · Investir en bourse</p>
+    <h1>Rendement des dividendes</h1>
+    <p class="lead">Ce que rapporte vraiment un dividende une fois les prélèvements payés, et ce que change le fait de le réinvestir année après année.</p>
+    <p class="mt-s"><span class="tag free">Gratuit</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card sim"><div class="sim-body"><form id="f" novalidate><div class="field-row"><div class="field"><label for="cours">Cours de l'action</label><input type="number" id="cours" name="cours" value="40" min="0.01" step="0.1" inputmode="decimal"></div><div class="field"><label for="dpa">Dividende annuel par action</label><input type="number" id="dpa" name="dpa" value="1.6" min="0" step="0.01" inputmode="decimal"></div></div><div class="field"><label for="capital">Montant investi</label><input type="number" id="capital" name="capital" value="10000" min="0" step="500" inputmode="decimal"></div><fieldset class="fieldset"><legend>Enveloppe</legend><div class="seg"><label><input type="radio" name="env" value="pea" checked><span>PEA</span></label><label><input type="radio" name="env" value="cto"><span>Compte-titres</span></label><label><input type="radio" name="env" value="brut"><span>Avant impôt</span></label></div></fieldset><div class="field"><label for="crois">Hausse annuelle du dividende<output for="crois" data-fmt="pct"></output></label><input type="range" id="crois" name="crois" value="4" min="-5" max="12" step="0.5" inputmode="decimal"></div><div class="field"><label for="hausse">Hausse annuelle du cours<output for="hausse" data-fmt="pct"></output></label><input type="range" id="hausse" name="hausse" value="3" min="-5" max="12" step="0.5" inputmode="decimal"></div><div class="field"><label for="ans">Durée<output for="ans" data-fmt="ans"></output></label><input type="range" id="ans" name="ans" value="20" min="1" max="40" step="1" inputmode="decimal"></div><label class="chk"><input type="checkbox" name="reinv" checked><span>Réinvestir les dividendes</span></label><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form><div class="sim-out" aria-live="polite"><p class="res-lbl">Rendement du dividende</p><p class="res-big" id="rRd">—</p><div class="res-row" id="rRow"></div><p class="verdict" id="verdict"></p><div class="chart" id="chart"></div><div class="chart" id="chart2"></div></div></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Sur un compte-titres, le prélèvement forfaitaire de 31,4 % (12,8 % d'impôt et 18,6 % de prélèvements sociaux en 2026) est retenu à chaque versement. Dans un PEA, rien n'est prélevé tant que vous ne retirez pas.</li><li>Les actions étrangères subissent souvent une retenue à la source dans leur pays, pas toujours récupérable : non prise en compte ici.</li><li>Un dividende peut baisser ou être supprimé : la croissance supposée n'est pas garantie.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Rendement = dividende annuel par action / cours<br>Rendement sur prix d'achat (année n) = dividende de l'année n / prix payé</p><p>Le jour du détachement, le cours baisse d'environ le montant du dividende : un dividende n'est pas de l'argent gratuit, c'est une partie de la valeur de l'entreprise qui vous est versée.</p></div></div><div class="card related" data-guides="dividendes,actions,compte-titres,pea" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="calendrier-dividendes.html">Calendrier des dividendes</a><a href="analyse-entreprise.html">Analyse d&#x27;entreprise</a><a href="independance.html">Indépendance financière</a><a href="enveloppes.html">Comparer les enveloppes</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

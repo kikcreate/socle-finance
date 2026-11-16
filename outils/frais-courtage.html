@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Frais de courtage · Socle</title>
+<meta name="description" content="Comparez le coût annuel de plusieurs grilles de frais de courtage selon le montant et le nombre de vos ordres, les titres étrangers et les droits de garde.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/frais-courtage.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="frais-courtage">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Frais de courtage</span></nav>
+    <p class="eyebrow">Outil de l'investisseur</p>
+    <h1>Frais de courtage</h1>
+    <p class="lead">Ce que vous coûtent vraiment vos ordres de bourse sur un an, selon trois grilles types que vous pouvez modifier pour y mettre celle de votre courtier.</p>
+    <p class="mt-s"><span class="tag sub">Outil de l'investisseur</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card" style="padding:18px"><div class="toolbar"><h2 style="font-size:1.1rem">Grilles comparées</h2><span class="sp"></span><button class="btn ghost small" type="button" id="add">Ajouter ma grille</button><button class="btn ghost small" type="button" id="reset">Revenir aux grilles types</button></div><div class="tbl"><table class="edit-tbl" style="min-width:820px"><thead><tr><th>Grille</th><th class="r">Commission %</th><th class="r">Minimum €</th><th class="r">Fixe € / ordre</th><th class="r">Change %</th><th class="r">Garde %/an</th><th></th></tr></thead><tbody id="rows"></tbody></table></div><p class="hint">Les grilles types ne correspondent à aucun établissement réel. Copiez la brochure tarifaire de votre courtier pour une comparaison exacte.</p></div><div class="mt-m"><div class="card sim"><div class="sim-body"><form id="f" novalidate><div class="field"><label for="montant">Montant d'un ordre</label><input type="number" id="montant" name="montant" value="500" min="0" step="50" inputmode="decimal"></div><div class="field"><label for="ordres">Ordres par an<output for="ordres" data-suf=" ordres"></output></label><input type="range" id="ordres" name="ordres" value="12" min="0" max="120" step="1" inputmode="decimal"></div><div class="field"><label for="etr">Part des ordres en devise étrangère<output for="etr" data-suf=" %"></output></label><input type="range" id="etr" name="etr" value="0" min="0" max="100" step="5" inputmode="decimal"></div><div class="field"><label for="pf">Valeur du portefeuille (pour les droits de garde)</label><input type="number" id="pf" name="pf" value="20000" min="0" step="1000" inputmode="decimal"></div><label class="chk"><input type="checkbox" name="pea" checked><span>Il s'agit d'un PEA (vérifier le plafond légal)</span></label><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form><div class="sim-out" aria-live="polite"><p class="res-lbl">La grille la moins chère pour vous</p><p class="res-big t" id="rBest">—</p><div class="res-row" id="rRow"></div><div class="chart" id="chart"></div><div id="tab" class="mt-m"></div></div></div></div></div><div class="card mt-m" style="padding:18px"><h3>Coût d'un ordre selon son montant</h3><div class="chart" id="chart2"></div><p class="muted small mt-s">Avec un minimum par ordre, les petits ordres coûtent très cher en pourcentage : mieux vaut parfois regrouper ses achats.</p></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Coût d'un ordre = le plus grand entre le minimum et (part fixe + commission × montant).</li><li>Les frais de change s'appliquent aux titres cotés dans une autre devise que l'euro.</li><li>Dans un PEA, la loi plafonne les frais : 0,5 % du montant par ordre passé en ligne (1,2 % autrement), 0,4 % par an de droits de garde, 10 € à l'ouverture et 150 € pour un transfert.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Coût annuel = ordres × max(minimum, fixe + % × montant) + change + droits de garde</p><p>Rapporté aux sommes investies, ce coût se compare directement aux frais annuels d'un fonds.</p></div></div><div class="card related" data-guides="compte-titres,pea,actions,ordres" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="frais.html">Impact des frais</a><a href="comparateur-etf.html">Comparateur d&#x27;ETF</a><a href="dca.html">Investissement programmé</a><a href="portefeuille.html">Suivi de portefeuille</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

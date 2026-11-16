@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Impôt sur le revenu et TMI 2026 · Socle</title>
+<meta name="description" content="Calculez votre impôt sur le revenu 2026, votre tranche marginale d&#x27;imposition, et comparez prélèvement forfaitaire et barème pour vos dividendes.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/impot.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="impot">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Impôt sur le revenu et TMI</span></nav>
+    <p class="eyebrow">Simulateur · Impôts et enveloppes</p>
+    <h1>Impôt sur le revenu et TMI</h1>
+    <p class="lead">Votre impôt avec le barème 2026, votre tranche marginale (celle qui compte pour un PER ou des revenus en plus) et le bon choix pour vos dividendes.</p>
+    <p class="mt-s"><span class="tag free">Gratuit</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card sim"><div class="sim-body"><form id="f" novalidate><div class="field"><label for="rev">Revenu net imposable du foyer</label><input type="number" id="rev" name="rev" value="38000" min="0" step="500" inputmode="decimal"><span class="hint">Après l'abattement de 10 % sur les salaires : c'est la ligne « revenu net imposable » de votre avis d'impôt.</span></div><fieldset class="fieldset"><legend>Situation</legend><div class="seg"><label><input type="radio" name="sit" value="seul" checked><span>Célibataire, divorcé ou veuf</span></label><label><input type="radio" name="sit" value="couple"><span>Marié ou pacsé</span></label></div></fieldset><div class="field"><label for="enfants">Enfants à charge<output for="enfants" data-suf=""></output></label><input type="range" id="enfants" name="enfants" value="0" min="0" max="8" step="1" inputmode="decimal"></div><label class="chk"><input type="checkbox" name="isole"><span>Parent isolé (case T)</span></label><div class="field"><label for="div">Dividendes et intérêts perçus (pour comparer flat tax et barème)</label><input type="number" id="div" name="div" value="0" min="0" step="100" inputmode="decimal"></div><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form><div class="sim-out" aria-live="polite"><p class="res-lbl">Impôt sur le revenu estimé</p><p class="res-big" id="rImp">—</p><div class="res-row" id="rRow"></div><div class="chart" id="chart"></div><ul class="mt-m" id="insights" style="list-style:disc;padding-left:1.2em;color:var(--muted)"></ul><div class="out-card mt-m"><p class="res-lbl">Dividendes : prélèvement forfaitaire ou barème ?</p><div id="divOut"></div></div></div></div></div><div class="card mt-m" style="padding:18px"><h2 style="font-size:1.1rem">Barème 2026 (revenus 2025), par part</h2><div class="tbl mt-s"><table><thead><tr><th>Quotient familial</th><th>Taux</th></tr></thead><tbody><tr><td>Jusqu'à 11 600 €</td><td>0 %</td></tr><tr><td>De 11 601 € à 29 579 €</td><td>11 %</td></tr><tr><td>De 29 580 € à 84 577 €</td><td>30 %</td></tr><tr><td>De 84 578 € à 181 917 €</td><td>41 %</td></tr><tr><td>Au-delà de 181 917 €</td><td>45 %</td></tr></tbody></table></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Barème 2026 sur les revenus 2025, revalorisé de 0,9 %. Plafonnement du quotient familial à 1 807 € par demi-part, décote de 1 982 € (3 277 € pour un couple) moins 45,25 % de l'impôt.</li><li>Parts : 1 par adulte, 0,5 pour chacun des deux premiers enfants, 1 à partir du troisième, 0,5 de plus pour un parent isolé.</li><li>Non pris en compte : réductions et crédits d'impôt (dons, emploi à domicile…), contribution sur les hauts revenus, cas particuliers (invalidité, garde alternée).</li><li>Dividendes au barème : abattement de 40 % et CSG déductible de 6,8 % ; l'option est globale pour tous les revenus de placement de l'année.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Impôt = parts × Σ (part du quotient dans chaque tranche × taux)<br>Quotient = revenu imposable / parts</p><p>La tranche marginale (TMI) est le taux appliqué au dernier euro gagné. Le taux moyen, impôt divisé par revenu, est toujours plus bas : passer dans une tranche supérieure n'augmente l'impôt que sur la part de revenu qui la dépasse.</p></div></div><div class="card related" data-guides="declarer,preparer-sa-retraite,compte-titres,dividendes" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="per.html">Simulateur PER</a><a href="enveloppes.html">Comparer les enveloppes</a><a href="declaration.html">Aide à la déclaration</a><a href="dividendes.html">Rendement des dividendes</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

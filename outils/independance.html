@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Indépendance financière · Socle</title>
+<meta name="description" content="Calculez le capital qui couvrirait vos dépenses (règle des 4 %) et le temps nécessaire pour l&#x27;atteindre selon votre taux d&#x27;épargne.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/independance.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="independance">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Indépendance financière</span></nav>
+    <p class="eyebrow">Simulateur · Investir en bourse</p>
+    <h1>Indépendance financière</h1>
+    <p class="lead">Le capital qui pourrait couvrir vos dépenses, combien de temps il faut pour le réunir, et pourquoi le taux d'épargne compte plus que le rendement.</p>
+    <p class="mt-s"><span class="tag free">Gratuit</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card sim"><div class="sim-body"><form id="f" novalidate><div class="field"><label for="rev">Revenu net mensuel du foyer</label><input type="number" id="rev" name="rev" value="3500" min="0" step="100" inputmode="decimal"></div><div class="field"><label for="dep">Dépenses mensuelles</label><input type="number" id="dep" name="dep" value="2400" min="0" step="50" inputmode="decimal"></div><div class="field"><label for="autres">Revenus qui continueront (retraite, loyers…)</label><input type="number" id="autres" name="autres" value="0" min="0" step="50" inputmode="decimal"><span class="hint">Par mois, en euros d'aujourd'hui.</span></div><div class="field"><label for="capital">Patrimoine financier actuel</label><input type="number" id="capital" name="capital" value="20000" min="0" step="1000" inputmode="decimal"></div><div class="field"><label for="age">Votre âge</label><input type="number" id="age" name="age" value="30" min="16" max="80" step="1" inputmode="decimal"></div><div class="field"><label for="rdt">Rendement réel annuel (après inflation)<output for="rdt" data-fmt="pct"></output></label><input type="range" id="rdt" name="rdt" value="4" min="0" max="8" step="0.1" inputmode="decimal"></div><div class="field"><label for="retrait">Taux de retrait annuel<output for="retrait" data-fmt="pct"></output></label><input type="range" id="retrait" name="retrait" value="4" min="2.5" max="6" step="0.1" inputmode="decimal"></div><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form><div class="sim-out" aria-live="polite"><p class="res-lbl">Capital cible</p><p class="res-big" id="rCible">—</p><div class="res-row" id="rRow"></div><div class="chart" id="chart"></div><div id="tab" class="mt-m"></div></div></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Tout est exprimé en euros d'aujourd'hui : le rendement saisi est un rendement après inflation.</li><li>La règle des 4 % vient d'études américaines sur 30 ans de retraite avec un portefeuille actions et obligations. Pour une période plus longue ou des marchés moins favorables, 3 à 3,5 % est plus prudent.</li><li>Impôts sur les retraits et frais non pris en compte : le capital cible réel est plus élevé.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Capital cible = dépenses annuelles non couvertes / taux de retrait</p><p>À 4 %, le capital cible vaut 25 fois les dépenses annuelles. Épargner davantage joue deux fois : le capital grossit plus vite, et le besoin à couvrir diminue.</p></div></div><div class="card related" data-guides="preparer-sa-retraite,etf,dividendes" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="epargne.html">Épargne et intérêts composés</a><a href="per.html">Simulateur PER</a><a href="dividendes.html">Rendement des dividendes</a><a href="inflation.html">Inflation et pouvoir d&#x27;achat</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

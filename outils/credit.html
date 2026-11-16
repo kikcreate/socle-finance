@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Simulateur de crédit immobilier · Socle</title>
+<meta name="description" content="Calculez la mensualité, le coût total, le TAEG approché et le tableau d&#x27;amortissement d&#x27;un prêt à taux fixe, ou votre capacité d&#x27;emprunt.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/outils.css">
+<script src="../assets/site.js"></script>
+<script src="../assets/guides-data.js"></script>
+<script src="../assets/outils/outils.js" defer></script>
+<script src="../assets/outils/credit.js" defer></script>
+</head>
+<body>
+<main id="main" data-outil="credit">
+<section class="page-hero" style="--c:var(--s3)">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span aria-hidden="true">›</span><a href="index.html">Outils</a><span aria-hidden="true">›</span><span>Crédit immobilier</span></nav>
+    <p class="eyebrow">Simulateur · Bien démarrer</p>
+    <h1>Crédit immobilier</h1>
+    <p class="lead">Mensualité, coût des intérêts et de l'assurance, tableau d'amortissement complet, ou à l'inverse le montant que vous pouvez emprunter avec vos revenus.</p>
+    <p class="mt-s"><span class="tag free">Gratuit</span></p>
+  </div>
+</section>
+<section class="tight">
+  <div class="wrap">
+<div class="card sim"><div class="sim-body"><form id="f" novalidate><fieldset class="fieldset"><legend>Je veux calculer</legend><div class="seg"><label><input type="radio" name="mode" value="mens" checked><span>Ma mensualité</span></label><label><input type="radio" name="mode" value="capa"><span>Ma capacité d&#x27;emprunt</span></label></div></fieldset><div data-m="mens"><div class="field"><label for="montant">Montant emprunté</label><input type="number" id="montant" name="montant" value="200000" min="0" step="1000" inputmode="decimal"></div></div><div data-m="capa" hidden><div class="field"><label for="revenus">Revenus nets mensuels du foyer</label><input type="number" id="revenus" name="revenus" value="4000" min="0" step="100" inputmode="decimal"></div><div class="field"><label for="charges">Autres crédits en cours (mensualités)</label><input type="number" id="charges" name="charges" value="0" min="0" step="10" inputmode="decimal"></div></div><div class="field"><label for="taux">Taux nominal annuel<output for="taux" data-fmt="pct"></output></label><input type="range" id="taux" name="taux" value="3.3" min="0" max="10" step="0.05" inputmode="decimal"></div><div class="field"><label for="ans">Durée<output for="ans" data-fmt="ans"></output></label><input type="range" id="ans" name="ans" value="25" min="5" max="30" step="1" inputmode="decimal"></div><div class="field"><label for="assu">Taux d'assurance emprunteur</label><input type="number" id="assu" name="assu" value="0.3" min="0" max="1" step="0.01" inputmode="decimal"><span class="hint">En % du capital initial par an. 0,10 à 0,40 % selon l'âge et la santé.</span></div><div class="field-row"><div class="field"><label for="fraisDossier">Frais de dossier</label><input type="number" id="fraisDossier" name="fraisDossier" value="1000" min="0" step="50" inputmode="decimal"></div><div class="field"><label for="garantie">Garantie (caution)</label><input type="number" id="garantie" name="garantie" value="2500" min="0" step="100" inputmode="decimal"></div></div><div class="sim-actions"><button type="button" data-share>Copier le lien de cette simulation</button><button type="button" data-print>Imprimer</button><button type="button" data-reset>Réinitialiser</button></div></form><div class="sim-out" aria-live="polite"><p class="res-lbl" id="rLbl">Mensualité</p><p class="res-big" id="rBig">—</p><div class="res-row" id="rRow"></div><div class="chart" id="chart"></div><ul class="mt-m" id="insights" style="list-style:disc;padding-left:1.2em;color:var(--muted)"></ul></div></div></div><div class="card mt-m" style="padding:18px"><div class="toolbar"><h2 style="font-size:1.1rem">Tableau d'amortissement</h2><span class="sp"></span><button type="button" class="btn ghost small" id="gran">Voir mois par mois</button></div><div id="tab"></div></div><div class="explain"><div class="card"><h2>Hypothèses</h2><ul><li>Prêt amortissable à taux fixe et mensualités constantes, convention bancaire française (taux mensuel = taux annuel / 12).</li><li>Assurance calculée sur le capital initial, comme dans la plupart des contrats groupe.</li><li>Le taux d'endettement maximal de 35 %, assurance comprise, est la règle du Haut Conseil de stabilité financière appliquée par les banques, avec des dérogations limitées. La durée est plafonnée à 25 ans (27 dans certains cas de construction).</li><li>Le TAEG affiché est une approximation : il intègre intérêts, assurance, frais de dossier et de garantie, mais pas les frais de courtier ni d'évaluation.</li></ul></div><div class="card"><h2>La formule</h2><p class="formula">Mensualité = C × t / (1 − (1 + t)^−n)</p><p>C est le capital emprunté, t le taux mensuel (taux annuel / 12) et n le nombre de mois. Chaque mois, les intérêts se calculent sur le capital restant dû : au début, la mensualité paie surtout des intérêts, à la fin surtout du capital.</p></div></div><div class="card related" data-guides="emprunter,immobilier,budget" hidden><h2>Guides liés</h2><div class="more"></div></div><div class="card related"><h2>Autres outils</h2><div class="more"><a href="budget.html">Budget 50/30/20</a><a href="objectif.html">Objectif financier</a><a href="inflation.html">Inflation et pouvoir d&#x27;achat</a><a href="epargne.html">Épargne et intérêts composés</a><a href="index.html">Tous les outils →</a></div></div>
+    <p class="disc">Outil pédagogique : les résultats dépendent des hypothèses saisies et ne constituent pas un conseil en investissement. Paramètres fiscaux en vigueur en novembre 2026, simplifiés. Tout placement en bourse comporte un risque de perte en capital.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>
